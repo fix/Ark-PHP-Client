@@ -11,8 +11,6 @@
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Http\HttpResponse;
-
 class Blocks extends AbstractAPI
 {
     /**
