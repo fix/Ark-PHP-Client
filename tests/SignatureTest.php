@@ -19,12 +19,12 @@ class SignatureTest extends TestCase
     /** @test */
     public function can_get_fee()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_add_signature()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }

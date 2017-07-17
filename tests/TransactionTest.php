@@ -19,30 +19,30 @@ class TransactionTest extends TestCase
     /** @test */
     public function can_get_transactions()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_transaction()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_unconfirmed_transaction()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_unconfirmed_transactions()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_add_transactions()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }

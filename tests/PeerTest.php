@@ -19,18 +19,18 @@ class PeerTest extends TestCase
     /** @test */
     public function can_get_peers()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_version()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_peer()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }

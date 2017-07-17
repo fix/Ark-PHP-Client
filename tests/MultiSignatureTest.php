@@ -19,24 +19,24 @@ class MultiSignatureTest extends TestCase
     /** @test */
     public function can_pending()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_sign()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_add_multisignature()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_accounts()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }

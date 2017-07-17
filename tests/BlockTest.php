@@ -19,66 +19,66 @@ class BlockTest extends TestCase
     /** @test */
     public function can_get_block()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_blocks()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_epoch()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_height()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_nethash()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_fee()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_fees()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_milestone()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_reward()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_supply()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_status()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }

@@ -19,36 +19,36 @@ class AccountTest extends TestCase
     /** @test */
     public function can_get_balance()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_publickey()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_delegates()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_delegates_fee()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_add_delegates()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_get_account()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }

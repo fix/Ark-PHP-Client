@@ -19,18 +19,18 @@ class LoaderTest extends TestCase
     /** @test */
     public function can_status()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_sync()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 
     /** @test */
     public function can_autoconfigure()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }
