@@ -21,16 +21,21 @@ class Client
     /** @var int */
     public $port;
 
+    /** @var array */
+    public $network;
+
     /**
      * Create a new Ark client instance.
      *
      * @param string $ip
      * @param int    $port
+     * @param array  $network
      */
-    public function __construct(string $ip, int $port)
+    public function __construct(string $ip, int $port, array $network)
     {
-        $this->ip   = $ip;
-        $this->port = $port;
+        $this->ip      = $ip;
+        $this->port    = $port;
+        $this->network = $network;
     }
 
     /**
@@ -40,7 +45,11 @@ class Client
      */
     public function api(string $name): API\AbstractAPI
     {
-        $client = Http::withBaseUri("http://{$this->ip}:{$this->port}/api/");
+        $client = Http::withBaseUri("http://{$this->ip}:{$this->port}/api/")->withHeaders([
+            'nethash' => $this->network['nethash'],
+            'version' => $this->network['activepeer']['version'],
+            'port'    => $this->network['activepeer']['port'],
+        ]);
 
         $class = "BrianFaust\\Ark\\API\\{$name}";
 
