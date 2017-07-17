@@ -18,60 +18,60 @@ class Accounts extends AbstractAPI
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getBalance(array $parameters = []): HttpResponse
+    public function getBalance(array $parameters = []): ?array
     {
-        return $this->client->get('accounts/getBalance', $parameters);
+        return $this->client->get('accounts/getBalance', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getPublickey(array $parameters = []): HttpResponse
+    public function getPublickey(array $parameters = []): ?array
     {
-        return $this->client->get('accounts/getPublickey', $parameters);
+        return $this->client->get('accounts/getPublickey', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getDelegates(array $parameters = []): HttpResponse
+    public function getDelegates(array $parameters = []): ?array
     {
-        return $this->client->get('accounts/delegates', $parameters);
+        return $this->client->get('accounts/delegates', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getDelegatesFee(array $parameters = []): HttpResponse
+    public function getDelegatesFee(array $parameters = []): ?array
     {
-        return $this->client->get('accounts/delegates/fee', $parameters);
+        return $this->client->get('accounts/delegates/fee', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function addDelegates(array $parameters = []): HttpResponse
+    public function addDelegates(array $parameters = []): ?array
     {
-        return $this->client->put('accounts/delegates', $parameters);
+        return $this->client->put('accounts/delegates', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getAccount(array $parameters = []): HttpResponse
+    public function getAccount(array $parameters = []): ?array
     {
-        return $this->client->get('accounts', $parameters);
+        return $this->client->get('accounts', $parameters)->json();
     }
 }

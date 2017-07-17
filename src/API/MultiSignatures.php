@@ -18,40 +18,40 @@ class MultiSignatures extends AbstractAPI
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function pending(array $parameters = []): HttpResponse
+    public function pending(array $parameters = []): ?array
     {
-        return $this->client->get('multisignatures/pending', $parameters);
+        return $this->client->get('multisignatures/pending', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function sign(array $parameters = []): HttpResponse
+    public function sign(array $parameters = []): ?array
     {
-        return $this->client->post('multisignatures/sign', $parameters);
+        return $this->client->post('multisignatures/sign', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function addMultisignature(array $parameters = []): HttpResponse
+    public function addMultisignature(array $parameters = []): ?array
     {
-        return $this->client->put('multisignatures', $parameters);
+        return $this->client->put('multisignatures', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getAccounts(array $parameters = []): HttpResponse
+    public function getAccounts(array $parameters = []): ?array
     {
-        return $this->client->get('multisignatures/accounts', $parameters);
+        return $this->client->get('multisignatures/accounts', $parameters)->json();
     }
 }

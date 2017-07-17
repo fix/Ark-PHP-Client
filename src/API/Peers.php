@@ -18,30 +18,30 @@ class Peers extends AbstractAPI
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getPeers(array $parameters = []): HttpResponse
+    public function getPeers(array $parameters = []): ?array
     {
-        return $this->client->get('peers', $parameters);
+        return $this->client->get('peers', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function version(array $parameters = []): HttpResponse
+    public function version(array $parameters = []): ?array
     {
-        return $this->client->get('peers/version', $parameters);
+        return $this->client->get('peers/version', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function getPeer(array $parameters = []): HttpResponse
+    public function getPeer(array $parameters = []): ?array
     {
-        return $this->client->get('peers/get', $parameters);
+        return $this->client->get('peers/get', $parameters)->json();
     }
 }

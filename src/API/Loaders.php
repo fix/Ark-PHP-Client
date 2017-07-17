@@ -18,30 +18,30 @@ class Loaders extends AbstractAPI
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function status(array $parameters = []): HttpResponse
+    public function status(array $parameters = []): ?array
     {
-        return $this->client->get('loader/status', $parameters);
+        return $this->client->get('loader/status', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function sync(array $parameters = []): HttpResponse
+    public function sync(array $parameters = []): ?array
     {
-        return $this->client->get('loader/status/sync', $parameters);
+        return $this->client->get('loader/status/sync', $parameters)->json();
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return null|array
      */
-    public function autoconfigure(array $parameters = []): HttpResponse
+    public function autoconfigure(array $parameters = []): ?array
     {
-        return $this->client->get('loader/autoconfigure', $parameters);
+        return $this->client->get('loader/autoconfigure', $parameters)->json();
     }
 }
