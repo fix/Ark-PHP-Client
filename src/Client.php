@@ -34,8 +34,6 @@ class Client
     }
 
     /**
-     * [api description].
-     *
      * @param string $name
      *
      * @return \BrianFaust\Ark\API\AbstractAPI
@@ -44,7 +42,7 @@ class Client
     {
         $client = Http::withBaseUri("http://{$this->ip}:{$this->port}/api/");
 
-        $class = "App\\Ark\\API\\{$name}";
+        $class = "BrianFaust\\Ark\\API\\{$name}";
 
         return new $class($client);
     }
