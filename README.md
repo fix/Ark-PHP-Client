@@ -15,7 +15,7 @@ $ composer require faustbrian/ark-php-client
 
 $client = new BrianFaust\Ark\Client('node123.arknet.cloud', 4001);
 
-$client->api('Peers')->version();
+$client->api('Peer')->version();
 ```
 
 ## Security

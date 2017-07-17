@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Peers extends AbstractAPI
+class Peer extends AbstractAPI
 {
     /**
      * @param array $parameters

@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Delegates extends AbstractAPI
+class Delegate extends AbstractAPI
 {
     /**
      * @param array $parameters

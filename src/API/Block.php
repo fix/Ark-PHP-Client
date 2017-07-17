@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Blocks extends AbstractAPI
+class Block extends AbstractAPI
 {
     /**
      * @param array $parameters

@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class MultiSignatures extends AbstractAPI
+class MultiSignature extends AbstractAPI
 {
     /**
      * @param array $parameters

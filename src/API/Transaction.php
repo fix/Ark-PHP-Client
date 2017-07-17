@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Transactions extends AbstractAPI
+class Transaction extends AbstractAPI
 {
     /**
      * @param array $parameters

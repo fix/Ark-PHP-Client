@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Signatures extends AbstractAPI
+class Signature extends AbstractAPI
 {
     /**
      * @param array $parameters

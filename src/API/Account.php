@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Accounts extends AbstractAPI
+class Account extends AbstractAPI
 {
     /**
      * @param array $parameters

@@ -11,7 +11,7 @@
 
 namespace BrianFaust\Ark\API;
 
-class Loaders extends AbstractAPI
+class Loader extends AbstractAPI
 {
     /**
      * @param array $parameters
