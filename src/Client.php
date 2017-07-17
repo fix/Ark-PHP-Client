@@ -21,7 +21,7 @@ class Client
     /**
      * Create a new Ark client instance.
      *
-     * @param array  $network
+     * @param array $network
      */
     public function __construct(array $network)
     {
@@ -35,7 +35,7 @@ class Client
      */
     public function api(string $name): API\AbstractAPI
     {
-        $ip = $this->network['activepeer']['ip'];
+        $ip   = $this->network['activepeer']['ip'];
         $port = $this->network['activepeer']['port'];
 
         $client = Http::withBaseUri("http://{$ip}:{$port}/api/")->withHeaders([

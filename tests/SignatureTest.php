@@ -11,8 +11,20 @@
 
 namespace BrianFaust\Tests\Ark;
 
-use PHPUnit_Framework_TestCase as TestCase;
-
-abstract class AbstractTestCase extends TestCase
+/**
+ * @coversNothing
+ */
+class SignatureTest extends TestCase
 {
+    /** @test */
+    public function can_get_fee()
+    {
+        $this->assertTrue(true);
+    }
+
+    /** @test */
+    public function can_add_signature()
+    {
+        $this->assertTrue(true);
+    }
 }
