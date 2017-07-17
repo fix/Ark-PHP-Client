@@ -13,7 +13,14 @@ $ composer require faustbrian/ark-php-client
 ``` php
 <?php
 
-$client = new BrianFaust\Ark\Client('node123.arknet.cloud', 4001);
+$client = new BrianFaust\Ark\Client([
+    'nethash' => 'some_magical_nethash',
+    'version' => '1.0.1',
+    'activepeer' => [
+        'ip' => 'node1.arknet.cloud',
+        'port' => 4001,
+    ]
+]);
 
 $client->api('Peer')->version();
 ```
