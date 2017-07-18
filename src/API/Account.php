@@ -88,4 +88,28 @@ class Account extends AbstractAPI
     {
         return $this->client->get('accounts', compact('address'));
     }
+
+    /**
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function getAllAccounts(): HttpResponse
+    {
+        return $this->client->get('accounts/getAllAccounts');
+    }
+
+    /**
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function top(): HttpResponse
+    {
+        return $this->client->get('accounts/top');
+    }
+
+    /**
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function count(): HttpResponse
+    {
+        return $this->client->get('accounts/count');
+    }
 }
