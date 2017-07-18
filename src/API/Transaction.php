@@ -73,7 +73,7 @@ class Transaction extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addTransactions(string $secret, int $amount, string $recipientId, array $parameters = []): HttpResponse
+    public function addTransaction(string $secret, int $amount, string $recipientId, array $parameters = []): HttpResponse
     {
         return $this->client->put('api/transactions', compact('secret', 'amount', 'recipientId') + $parameters);
     }
