@@ -66,8 +66,8 @@ class TransactionTest extends TestCase
     public function can_add_transactions()
     {
         // Arrange...
-        $secret = str_random(34);
-        $amount = rand();
+        $secret      = str_random(34);
+        $amount      = rand();
         $recipientId = str_random(34);
 
         // Act...

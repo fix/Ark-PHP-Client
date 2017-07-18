@@ -24,7 +24,7 @@ class Block extends AbstractAPI
      */
     public function getBlock(string $id): HttpResponse
     {
-        return $this->client->get('blocks/get', compact('id'));
+        return $this->client->get('api/blocks/get', compact('id'));
     }
 
     /**
@@ -36,7 +36,7 @@ class Block extends AbstractAPI
      */
     public function getBlocks(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks', $parameters);
+        return $this->client->get('api/blocks', $parameters);
     }
 
     /**
@@ -46,7 +46,7 @@ class Block extends AbstractAPI
      */
     public function getEpoch(): HttpResponse
     {
-        return $this->client->get('blocks/getEpoch');
+        return $this->client->get('api/blocks/getEpoch');
     }
 
     /**
@@ -56,7 +56,7 @@ class Block extends AbstractAPI
      */
     public function getHeight(): HttpResponse
     {
-        return $this->client->get('blocks/getHeight');
+        return $this->client->get('api/blocks/getHeight');
     }
 
     /**
@@ -66,7 +66,7 @@ class Block extends AbstractAPI
      */
     public function getNethash(): HttpResponse
     {
-        return $this->client->get('blocks/getNethash');
+        return $this->client->get('api/blocks/getNethash');
     }
 
     /**
@@ -76,7 +76,7 @@ class Block extends AbstractAPI
      */
     public function getFee(): HttpResponse
     {
-        return $this->client->get('blocks/getFee');
+        return $this->client->get('api/blocks/getFee');
     }
 
     /**
@@ -86,7 +86,7 @@ class Block extends AbstractAPI
      */
     public function getFees(): HttpResponse
     {
-        return $this->client->get('blocks/getFees');
+        return $this->client->get('api/blocks/getFees');
     }
 
     /**
@@ -96,7 +96,7 @@ class Block extends AbstractAPI
      */
     public function getMilestone(): HttpResponse
     {
-        return $this->client->get('blocks/getMilestone');
+        return $this->client->get('api/blocks/getMilestone');
     }
 
     /**
@@ -106,7 +106,7 @@ class Block extends AbstractAPI
      */
     public function getReward(): HttpResponse
     {
-        return $this->client->get('blocks/getReward');
+        return $this->client->get('api/blocks/getReward');
     }
 
     /**
@@ -116,7 +116,7 @@ class Block extends AbstractAPI
      */
     public function getSupply(): HttpResponse
     {
-        return $this->client->get('blocks/getSupply');
+        return $this->client->get('api/blocks/getSupply');
     }
 
     /**
@@ -126,6 +126,6 @@ class Block extends AbstractAPI
      */
     public function getStatus(): HttpResponse
     {
-        return $this->client->get('blocks/getStatus');
+        return $this->client->get('api/blocks/getStatus');
     }
 }

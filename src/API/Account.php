@@ -24,7 +24,7 @@ class Account extends AbstractAPI
      */
     public function getBalance(string $address): HttpResponse
     {
-        return $this->client->get('accounts/getBalance', compact('address'));
+        return $this->client->get('api/accounts/getBalance', compact('address'));
     }
 
     /**
@@ -36,7 +36,7 @@ class Account extends AbstractAPI
      */
     public function getPublickey(string $address): HttpResponse
     {
-        return $this->client->get('accounts/getPublickey', compact('address'));
+        return $this->client->get('api/accounts/getPublickey', compact('address'));
     }
 
     /**
@@ -48,7 +48,7 @@ class Account extends AbstractAPI
      */
     public function getDelegates(string $address): HttpResponse
     {
-        return $this->client->get('accounts/delegates', compact('address'));
+        return $this->client->get('api/accounts/delegates', compact('address'));
     }
 
     /**
@@ -60,7 +60,7 @@ class Account extends AbstractAPI
      */
     public function getDelegatesFee(string $address): HttpResponse
     {
-        return $this->client->get('accounts/delegates/fee', compact('address'));
+        return $this->client->get('api/accounts/delegates/fee', compact('address'));
     }
 
     /**
@@ -74,7 +74,7 @@ class Account extends AbstractAPI
      */
     public function addDelegates(string $secret, string $publicKey, string $secondSecret): HttpResponse
     {
-        return $this->client->put('accounts/delegates', compact('secret', 'publicKey', 'secondSecret'));
+        return $this->client->put('api/accounts/delegates', compact('secret', 'publicKey', 'secondSecret'));
     }
 
     /**
@@ -86,7 +86,7 @@ class Account extends AbstractAPI
      */
     public function getAccount(string $address): HttpResponse
     {
-        return $this->client->get('accounts', compact('address'));
+        return $this->client->get('api/accounts', compact('address'));
     }
 
     /**
@@ -94,7 +94,7 @@ class Account extends AbstractAPI
      */
     public function getAllAccounts(): HttpResponse
     {
-        return $this->client->get('accounts/getAllAccounts');
+        return $this->client->get('api/accounts/getAllAccounts');
     }
 
     /**
@@ -102,7 +102,7 @@ class Account extends AbstractAPI
      */
     public function top(): HttpResponse
     {
-        return $this->client->get('accounts/top');
+        return $this->client->get('api/accounts/top');
     }
 
     /**
@@ -110,6 +110,6 @@ class Account extends AbstractAPI
      */
     public function count(): HttpResponse
     {
-        return $this->client->get('accounts/count');
+        return $this->client->get('api/accounts/count');
     }
 }

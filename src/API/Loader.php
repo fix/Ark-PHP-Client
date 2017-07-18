@@ -22,7 +22,7 @@ class Loader extends AbstractAPI
      */
     public function status(): HttpResponse
     {
-        return $this->client->get('loader/status');
+        return $this->client->get('api/loader/status');
     }
 
     /**
@@ -32,7 +32,7 @@ class Loader extends AbstractAPI
      */
     public function sync(): HttpResponse
     {
-        return $this->client->get('loader/status/sync');
+        return $this->client->get('api/loader/status/sync');
     }
 
     /**
@@ -42,6 +42,6 @@ class Loader extends AbstractAPI
      */
     public function autoconfigure(): HttpResponse
     {
-        return $this->client->get('loader/autoconfigure');
+        return $this->client->get('api/loader/autoconfigure');
     }
 }

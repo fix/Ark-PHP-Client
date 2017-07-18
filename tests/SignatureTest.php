@@ -30,7 +30,7 @@ class SignatureTest extends TestCase
     public function can_add_signature()
     {
         // Arrange...
-        $secret = str_random(34);
+        $secret       = str_random(34);
         $secondSecret = str_random(34);
 
         // Act...

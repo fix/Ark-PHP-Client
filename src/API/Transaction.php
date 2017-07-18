@@ -24,7 +24,7 @@ class Transaction extends AbstractAPI
      */
     public function getTransaction(string $id): HttpResponse
     {
-        return $this->client->get('transactions/get', compact('id'));
+        return $this->client->get('api/transactions/get', compact('id'));
     }
 
     /**
@@ -36,7 +36,7 @@ class Transaction extends AbstractAPI
      */
     public function getTransactions(array $parameters = []): HttpResponse
     {
-        return $this->client->get('transactions', $parameters);
+        return $this->client->get('api/transactions', $parameters);
     }
 
     /**
@@ -48,7 +48,7 @@ class Transaction extends AbstractAPI
      */
     public function getUnconfirmedTransaction(string $id): HttpResponse
     {
-        return $this->client->get('transactions/unconfirmed/get', compact('id'));
+        return $this->client->get('api/transactions/unconfirmed/get', compact('id'));
     }
 
     /**
@@ -60,7 +60,7 @@ class Transaction extends AbstractAPI
      */
     public function getUnconfirmedTransactions(array $parameters = []): HttpResponse
     {
-        return $this->client->get('transactions/unconfirmed', $parameters);
+        return $this->client->get('api/transactions/unconfirmed', $parameters);
     }
 
     /**
@@ -75,6 +75,6 @@ class Transaction extends AbstractAPI
      */
     public function addTransactions(string $secret, int $amount, string $recipientId, array $parameters = []): HttpResponse
     {
-        return $this->client->put('transactions', compact('secret', 'amount', 'recipientId') + $parameters);
+        return $this->client->put('api/transactions', compact('secret', 'amount', 'recipientId') + $parameters);
     }
 }

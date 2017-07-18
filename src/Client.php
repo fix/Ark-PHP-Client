@@ -38,7 +38,7 @@ class Client
         $ip   = $this->network['activepeer']['ip'];
         $port = $this->network['activepeer']['port'];
 
-        $client = Http::withBaseUri("http://{$ip}:{$port}/api/")->withHeaders([
+        $client = Http::withBaseUri("http://{$ip}:{$port}/")->withHeaders([
             'nethash' => $this->network['nethash'],
             'version' => $this->network['version'],
             'port'    => $this->network['activepeer']['port'],

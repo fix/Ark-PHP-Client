@@ -22,7 +22,7 @@ class MultiSignature extends AbstractAPI
      */
     public function pending(string $publicKey): HttpResponse
     {
-        return $this->client->get('multisignatures/pending', compact('publicKey'));
+        return $this->client->get('api/multisignatures/pending', compact('publicKey'));
     }
 
     /**
@@ -34,7 +34,7 @@ class MultiSignature extends AbstractAPI
      */
     public function sign(string $transactionId, string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->post('multisignatures/sign', compact('transactionId', 'secret') + $parameters);
+        return $this->client->post('api/multisignatures/sign', compact('transactionId', 'secret') + $parameters);
     }
 
     /**
@@ -48,7 +48,7 @@ class MultiSignature extends AbstractAPI
      */
     public function addMultisignature(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->put('multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
+        return $this->client->put('api/multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
     }
 
     /**
@@ -58,6 +58,6 @@ class MultiSignature extends AbstractAPI
      */
     public function getAccounts(string $publicKey): HttpResponse
     {
-        return $this->client->get('multisignatures/accounts', compact('publicKey'));
+        return $this->client->get('api/multisignatures/accounts', compact('publicKey'));
     }
 }

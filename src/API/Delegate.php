@@ -20,7 +20,7 @@ class Delegate extends AbstractAPI
      */
     public function count(): HttpResponse
     {
-        return $this->client->get('delegates/count');
+        return $this->client->get('api/delegates/count');
     }
 
     /**
@@ -31,7 +31,7 @@ class Delegate extends AbstractAPI
      */
     public function search(string $q, array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/search', compact('q') + $parameters);
+        return $this->client->get('api/delegates/search', compact('q') + $parameters);
     }
 
     /**
@@ -42,7 +42,7 @@ class Delegate extends AbstractAPI
      */
     public function getVoters(string $publicKey, array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/voters', compact('publicKey') + $parameters);
+        return $this->client->get('api/delegates/voters', compact('publicKey') + $parameters);
     }
 
     /**
@@ -52,7 +52,7 @@ class Delegate extends AbstractAPI
      */
     public function getDelegate(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/get', $parameters);
+        return $this->client->get('api/delegates/get', $parameters);
     }
 
     /**
@@ -62,7 +62,7 @@ class Delegate extends AbstractAPI
      */
     public function getDelegates(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates', $parameters);
+        return $this->client->get('api/delegates', $parameters);
     }
 
     /**
@@ -70,7 +70,7 @@ class Delegate extends AbstractAPI
      */
     public function getFee(): HttpResponse
     {
-        return $this->client->get('delegates/fee');
+        return $this->client->get('api/delegates/fee');
     }
 
     /**
@@ -80,7 +80,7 @@ class Delegate extends AbstractAPI
      */
     public function getForgedByAccount(string $generatorPublicKey): HttpResponse
     {
-        return $this->client->get('delegates/forging/getForgedByAccount', compact('generatorPublicKey'));
+        return $this->client->get('api/delegates/forging/getForgedByAccount', compact('generatorPublicKey'));
     }
 
     /**
@@ -91,7 +91,7 @@ class Delegate extends AbstractAPI
      */
     public function addDelegate(string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->put('delegates', compact('secret') + $parameters);
+        return $this->client->put('api/delegates', compact('secret') + $parameters);
     }
 
     /**
@@ -99,7 +99,7 @@ class Delegate extends AbstractAPI
      */
     public function getNextForgers(): HttpResponse
     {
-        return $this->client->get('delegates/getNextForgers');
+        return $this->client->get('api/delegates/getNextForgers');
     }
 
     /**
@@ -110,7 +110,7 @@ class Delegate extends AbstractAPI
      */
     public function enableForging(string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->post('delegates/forging/enable', compact('secret') + $parameters);
+        return $this->client->post('api/delegates/forging/enable', compact('secret') + $parameters);
     }
 
     /**
@@ -121,7 +121,7 @@ class Delegate extends AbstractAPI
      */
     public function disableForging(string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->post('delegates/forging/disable', compact('secret') + $parameters);
+        return $this->client->post('api/delegates/forging/disable', compact('secret') + $parameters);
     }
 
     /**
@@ -132,6 +132,6 @@ class Delegate extends AbstractAPI
      */
     public function forgingStatus(string $publicKey, array $parameters = []): HttpResponse
     {
-        return $this->client->post('delegates/forging/disable', compact('publicKey') + $parameters);
+        return $this->client->post('api/delegates/forging/disable', compact('publicKey') + $parameters);
     }
 }
