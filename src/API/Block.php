@@ -16,6 +16,8 @@ use BrianFaust\Http\HttpResponse;
 class Block extends AbstractAPI
 {
     /**
+     * Get block by id.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -26,6 +28,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     *  Get all blocks.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -36,6 +40,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain epoch.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -46,6 +52,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain height.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -56,6 +64,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain nethash.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -66,6 +76,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the transaction fee for sending "normal" transactions.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -76,6 +88,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the network fees.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -86,6 +100,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain milestone.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -96,6 +112,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain reward.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -106,6 +124,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain supply.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -116,6 +136,8 @@ class Block extends AbstractAPI
     }
 
     /**
+     * Get the blockchain status.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse

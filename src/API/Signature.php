@@ -16,6 +16,8 @@ use BrianFaust\Http\HttpResponse;
 class Signature extends AbstractAPI
 {
     /**
+     * Get the fee for a signature.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -26,6 +28,8 @@ class Signature extends AbstractAPI
     }
 
     /**
+     * Create a new signature.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse

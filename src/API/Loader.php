@@ -16,6 +16,8 @@ use BrianFaust\Http\HttpResponse;
 class Loader extends AbstractAPI
 {
     /**
+     * Get the blockchain status.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -26,6 +28,8 @@ class Loader extends AbstractAPI
     }
 
     /**
+     * Get the synchronisation status of the client.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -36,6 +40,8 @@ class Loader extends AbstractAPI
     }
 
     /**
+     * Auto-configure the client loader.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse

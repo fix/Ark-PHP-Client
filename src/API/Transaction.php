@@ -16,6 +16,8 @@ use BrianFaust\Http\HttpResponse;
 class Transaction extends AbstractAPI
 {
     /**
+     * Get all transactions.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -26,6 +28,8 @@ class Transaction extends AbstractAPI
     }
 
     /**
+     * Get a single transaction.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -36,6 +40,8 @@ class Transaction extends AbstractAPI
     }
 
     /**
+     * Get a single unconfirmed transaction.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -46,6 +52,8 @@ class Transaction extends AbstractAPI
     }
 
     /**
+     * Get all unconfirmed transactions.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -56,6 +64,8 @@ class Transaction extends AbstractAPI
     }
 
     /**
+     * Create a new transaction.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse

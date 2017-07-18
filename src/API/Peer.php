@@ -16,6 +16,8 @@ use BrianFaust\Http\HttpResponse;
 class Peer extends AbstractAPI
 {
     /**
+     * Get all peers.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -26,6 +28,8 @@ class Peer extends AbstractAPI
     }
 
     /**
+     * Get the peer version.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -36,6 +40,8 @@ class Peer extends AbstractAPI
     }
 
     /**
+     * Get a single peer.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse

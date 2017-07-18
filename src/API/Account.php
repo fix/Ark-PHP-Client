@@ -16,6 +16,8 @@ use BrianFaust\Http\HttpResponse;
 class Account extends AbstractAPI
 {
     /**
+     * Get the balance of an account.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -26,6 +28,8 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Get the public key of an account.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -36,6 +40,8 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Get the delegates of an account.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -46,6 +52,8 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Get the delegate fee of an account.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -56,6 +64,8 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Add a new delegate to an account.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -66,6 +76,8 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Returns account information of an address.
+     *
      * @param array $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
