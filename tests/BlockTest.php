@@ -19,66 +19,110 @@ class BlockTest extends TestCase
     /** @test */
     public function can_get_block()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getBlock();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_blocks()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getBlocks();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_epoch()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getEpoch();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_height()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getHeight();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_nethash()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getNethash();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_fee()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getFee();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_fees()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getFees();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_milestone()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getMilestone();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_reward()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getReward();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_supply()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getSupply();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_status()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Block')->getStatus();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

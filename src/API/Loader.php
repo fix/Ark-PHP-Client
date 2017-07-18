@@ -11,35 +11,37 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Loader extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function status(array $parameters = []): ?array
+    public function status(array $parameters = []): HttpResponse
     {
-        return $this->client->get('loader/status', $parameters)->json();
+        return $this->client->get('loader/status', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function sync(array $parameters = []): ?array
+    public function sync(array $parameters = []): HttpResponse
     {
-        return $this->client->get('loader/status/sync', $parameters)->json();
+        return $this->client->get('loader/status/sync', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function autoconfigure(array $parameters = []): ?array
+    public function autoconfigure(array $parameters = []): HttpResponse
     {
-        return $this->client->get('loader/autoconfigure', $parameters)->json();
+        return $this->client->get('loader/autoconfigure', $parameters);
     }
 }

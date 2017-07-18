@@ -11,25 +11,27 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Signature extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(array $parameters = []): ?array
+    public function getFee(array $parameters = []): HttpResponse
     {
-        return $this->client->get('signatures/fee', $parameters)->json();
+        return $this->client->get('signatures/fee', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function addSignature(array $parameters = []): ?array
+    public function addSignature(array $parameters = []): HttpResponse
     {
-        return $this->client->put('signatures/addSignature', $parameters)->json();
+        return $this->client->put('signatures', $parameters);
     }
 }

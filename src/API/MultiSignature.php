@@ -11,45 +11,47 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class MultiSignature extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function pending(array $parameters = []): ?array
+    public function pending(array $parameters = []): HttpResponse
     {
-        return $this->client->get('multisignatures/pending', $parameters)->json();
+        return $this->client->get('multisignatures/pending', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function sign(array $parameters = []): ?array
+    public function sign(array $parameters = []): HttpResponse
     {
-        return $this->client->post('multisignatures/sign', $parameters)->json();
+        return $this->client->post('multisignatures/sign', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function addMultisignature(array $parameters = []): ?array
+    public function addMultisignature(array $parameters = []): HttpResponse
     {
-        return $this->client->put('multisignatures', $parameters)->json();
+        return $this->client->put('multisignatures', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getAccounts(array $parameters = []): ?array
+    public function getAccounts(array $parameters = []): HttpResponse
     {
-        return $this->client->get('multisignatures/accounts', $parameters)->json();
+        return $this->client->get('multisignatures/accounts', $parameters);
     }
 }

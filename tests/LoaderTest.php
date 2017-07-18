@@ -19,18 +19,30 @@ class LoaderTest extends TestCase
     /** @test */
     public function can_status()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Loader')->status();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_sync()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Loader')->sync();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_autoconfigure()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Loader')->autoconfigure();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

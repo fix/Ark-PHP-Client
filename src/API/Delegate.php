@@ -11,95 +11,97 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Delegate extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function count(array $parameters = []): ?array
+    public function count(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/count', $parameters)->json();
+        return $this->client->get('delegates/count', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function search(array $parameters = []): ?array
+    public function search(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/search', $parameters)->json();
+        return $this->client->get('delegates/search', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getVoters(array $parameters = []): ?array
+    public function getVoters(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/voters', $parameters)->json();
+        return $this->client->get('delegates/voters', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegate(array $parameters = []): ?array
+    public function getDelegate(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/get', $parameters)->json();
+        return $this->client->get('delegates/get', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegates(array $parameters = []): ?array
+    public function getDelegates(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates', $parameters)->json();
+        return $this->client->get('delegates', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(array $parameters = []): ?array
+    public function getFee(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/fee', $parameters)->json();
+        return $this->client->get('delegates/fee', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getForgedByAccount(array $parameters = []): ?array
+    public function getForgedByAccount(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/forging/getForgedByAccount', $parameters)->json();
+        return $this->client->get('delegates/forging/getForgedByAccount', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function addDelegate(array $parameters = []): ?array
+    public function addDelegate(array $parameters = []): HttpResponse
     {
-        return $this->client->put('delegates', $parameters)->json();
+        return $this->client->put('delegates', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getNextForgers(array $parameters = []): ?array
+    public function getNextForgers(array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/getNextForgers', $parameters)->json();
+        return $this->client->get('delegates/getNextForgers', $parameters);
     }
 }

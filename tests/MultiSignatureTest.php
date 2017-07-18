@@ -19,24 +19,40 @@ class MultiSignatureTest extends TestCase
     /** @test */
     public function can_pending()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('MultiSignature')->pending();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_sign()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('MultiSignature')->sign();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_add_multisignature()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('MultiSignature')->addMultisignature();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_accounts()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('MultiSignature')->getAccounts();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

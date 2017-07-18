@@ -19,18 +19,30 @@ class PeerTest extends TestCase
     /** @test */
     public function can_get_peers()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Peer')->getPeers();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_version()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Peer')->version();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_peer()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Peer')->getPeer();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

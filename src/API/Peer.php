@@ -11,35 +11,37 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Peer extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getPeers(array $parameters = []): ?array
+    public function getPeers(array $parameters = []): HttpResponse
     {
-        return $this->client->get('peers', $parameters)->json();
+        return $this->client->get('peers', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function version(array $parameters = []): ?array
+    public function version(array $parameters = []): HttpResponse
     {
-        return $this->client->get('peers/version', $parameters)->json();
+        return $this->client->get('peers/version', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getPeer(array $parameters = []): ?array
+    public function getPeer(array $parameters = []): HttpResponse
     {
-        return $this->client->get('peers/get', $parameters)->json();
+        return $this->client->get('peers/get', $parameters);
     }
 }

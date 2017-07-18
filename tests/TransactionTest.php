@@ -19,30 +19,50 @@ class TransactionTest extends TestCase
     /** @test */
     public function can_get_transactions()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Transaction')->getTransactions();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_transaction()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Transaction')->getTransaction();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_unconfirmed_transaction()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Transaction')->getUnconfirmedTransaction();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_unconfirmed_transactions()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Transaction')->getUnconfirmedTransactions();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_add_transactions()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Transaction')->addTransactions();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

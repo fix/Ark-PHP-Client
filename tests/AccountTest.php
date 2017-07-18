@@ -11,6 +11,8 @@
 
 namespace BrianFaust\Tests\Ark;
 
+use BrianFaust\Ark\Client;
+
 /**
  * @coversNothing
  */
@@ -19,36 +21,60 @@ class AccountTest extends TestCase
     /** @test */
     public function can_get_balance()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Account')->getBalance();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_publickey()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Account')->getPublickey();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_delegates()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Account')->getDelegates();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_delegates_fee()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Account')->getDelegatesFee();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_add_delegates()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Account')->addDelegates();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_account()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Account')->getAccount();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

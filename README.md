@@ -13,6 +13,7 @@ $ composer require faustbrian/ark-php-client
 ``` php
 <?php
 
+// Setup a new ark client
 $client = new BrianFaust\Ark\Client([
     'nethash' => 'some_magical_nethash',
     'version' => '1.0.1',
@@ -22,7 +23,15 @@ $client = new BrianFaust\Ark\Client([
     ]
 ]);
 
-$client->api('Peer')->version();
+// Send a request to peers/version
+$response = $client->api('Peer')->version();
+
+// Check if everything went fine
+if ($response->isSuccess()) {
+    dd($response->json());
+} else {
+    dd('Something went wrong...');
+}
 ```
 
 ## Security

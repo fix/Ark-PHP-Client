@@ -19,54 +19,90 @@ class DelegateTest extends TestCase
     /** @test */
     public function can_count()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->count();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_search()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->search();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_voters()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->getVoters();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_delegate()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->getDelegate();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_delegates()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->getDelegates();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_fee()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->getFee();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_forged_by_account()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->getForgedByAccount();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_add_delegate()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->addDelegate();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 
     /** @test */
     public function can_get_next_forgers()
     {
-        $this->assertTrue(false);
+        // Act...
+        $response = $this->getClient()->api('Delegate')->getNextForgers();
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
     }
 }

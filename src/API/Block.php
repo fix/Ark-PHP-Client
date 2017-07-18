@@ -11,115 +11,117 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Block extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getBlock(array $parameters = []): ?array
+    public function getBlock(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/get', $parameters)->json();
+        return $this->client->get('blocks/get', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getBlocks(array $parameters = []): ?array
+    public function getBlocks(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks', $parameters)->json();
+        return $this->client->get('blocks', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getEpoch(array $parameters = []): ?array
+    public function getEpoch(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getEpoch', $parameters)->json();
+        return $this->client->get('blocks/getEpoch', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getHeight(array $parameters = []): ?array
+    public function getHeight(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getHeight', $parameters)->json();
+        return $this->client->get('blocks/getHeight', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getNethash(array $parameters = []): ?array
+    public function getNethash(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getNethash', $parameters)->json();
+        return $this->client->get('blocks/getNethash', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(array $parameters = []): ?array
+    public function getFee(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getFee', $parameters)->json();
+        return $this->client->get('blocks/getFee', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFees(array $parameters = []): ?array
+    public function getFees(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getFees', $parameters)->json();
+        return $this->client->get('blocks/getFees', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getMilestone(array $parameters = []): ?array
+    public function getMilestone(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getMilestone', $parameters)->json();
+        return $this->client->get('blocks/getMilestone', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getReward(array $parameters = []): ?array
+    public function getReward(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getReward', $parameters)->json();
+        return $this->client->get('blocks/getReward', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getSupply(array $parameters = []): ?array
+    public function getSupply(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getSupply', $parameters)->json();
+        return $this->client->get('blocks/getSupply', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getStatus(array $parameters = []): ?array
+    public function getStatus(array $parameters = []): HttpResponse
     {
-        return $this->client->get('blocks/getStatus', $parameters)->json();
+        return $this->client->get('blocks/getStatus', $parameters);
     }
 }

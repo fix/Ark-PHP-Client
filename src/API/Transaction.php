@@ -11,55 +11,57 @@
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Http\HttpResponse;
+
 class Transaction extends AbstractAPI
 {
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getTransactions(array $parameters = []): ?array
+    public function getTransactions(array $parameters = []): HttpResponse
     {
-        return $this->client->get('transactions', $parameters)->json();
+        return $this->client->get('transactions', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getTransaction(array $parameters = []): ?array
+    public function getTransaction(array $parameters = []): HttpResponse
     {
-        return $this->client->get('transactions/get', $parameters)->json();
+        return $this->client->get('transactions/get', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getUnconfirmedTransaction(array $parameters = []): ?array
+    public function getUnconfirmedTransaction(array $parameters = []): HttpResponse
     {
-        return $this->client->get('transactions/unconfirmed/get', $parameters)->json();
+        return $this->client->get('transactions/unconfirmed/get', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function getUnconfirmedTransactions(array $parameters = []): ?array
+    public function getUnconfirmedTransactions(array $parameters = []): HttpResponse
     {
-        return $this->client->get('transactions/unconfirmed', $parameters)->json();
+        return $this->client->get('transactions/unconfirmed', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return null|array
+     * @return \BrianFaust\Http\HttpResponse
      */
-    public function addTransactions(array $parameters = []): ?array
+    public function addTransactions(array $parameters = []): HttpResponse
     {
-        return $this->client->put('transactions', $parameters)->json();
+        return $this->client->put('transactions', $parameters);
     }
 }
