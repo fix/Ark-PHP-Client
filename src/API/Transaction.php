@@ -16,6 +16,18 @@ use BrianFaust\Http\HttpResponse;
 class Transaction extends AbstractAPI
 {
     /**
+     * Get a single transaction.
+     *
+     * @param string $id
+     *
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function getTransaction(string $id): HttpResponse
+    {
+        return $this->client->get('transactions/get', compact('id'));
+    }
+
+    /**
      * Get all transactions.
      *
      * @param array $parameters
@@ -28,27 +40,15 @@ class Transaction extends AbstractAPI
     }
 
     /**
-     * Get a single transaction.
-     *
-     * @param array $parameters
-     *
-     * @return \BrianFaust\Http\HttpResponse
-     */
-    public function getTransaction(array $parameters = []): HttpResponse
-    {
-        return $this->client->get('transactions/get', $parameters);
-    }
-
-    /**
      * Get a single unconfirmed transaction.
      *
-     * @param array $parameters
+     * @param string $id
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getUnconfirmedTransaction(array $parameters = []): HttpResponse
+    public function getUnconfirmedTransaction(string $id): HttpResponse
     {
-        return $this->client->get('transactions/unconfirmed/get', $parameters);
+        return $this->client->get('transactions/unconfirmed/get', compact('id'));
     }
 
     /**
@@ -66,12 +66,15 @@ class Transaction extends AbstractAPI
     /**
      * Create a new transaction.
      *
-     * @param array $parameters
+     * @param string $secret
+     * @param int    $amount
+     * @param string $recipientId
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addTransactions(array $parameters = []): HttpResponse
+    public function addTransactions(string $secret, int $amount, string $recipientId, array $parameters = []): HttpResponse
     {
-        return $this->client->put('transactions', $parameters);
+        return $this->client->put('transactions', compact('secret', 'amount', 'recipientId') + $parameters);
     }
 }

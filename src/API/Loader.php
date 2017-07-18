@@ -18,36 +18,30 @@ class Loader extends AbstractAPI
     /**
      * Get the blockchain status.
      *
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function status(array $parameters = []): HttpResponse
+    public function status(): HttpResponse
     {
-        return $this->client->get('loader/status', $parameters);
+        return $this->client->get('loader/status');
     }
 
     /**
      * Get the synchronisation status of the client.
      *
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function sync(array $parameters = []): HttpResponse
+    public function sync(): HttpResponse
     {
-        return $this->client->get('loader/status/sync', $parameters);
+        return $this->client->get('loader/status/sync');
     }
 
     /**
      * Auto-configure the client loader.
      *
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function autoconfigure(array $parameters = []): HttpResponse
+    public function autoconfigure(): HttpResponse
     {
-        return $this->client->get('loader/autoconfigure', $parameters);
+        return $this->client->get('loader/autoconfigure');
     }
 }

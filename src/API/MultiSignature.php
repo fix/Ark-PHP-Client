@@ -16,42 +16,48 @@ use BrianFaust\Http\HttpResponse;
 class MultiSignature extends AbstractAPI
 {
     /**
-     * @param array $parameters
+     * @param string $publicKey
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function pending(array $parameters = []): HttpResponse
+    public function pending(string $publicKey): HttpResponse
     {
-        return $this->client->get('multisignatures/pending', $parameters);
+        return $this->client->get('multisignatures/pending', compact('publicKey'));
     }
 
     /**
-     * @param array $parameters
+     * @param string $transactionId
+     * @param string $secret
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function sign(array $parameters = []): HttpResponse
+    public function sign(string $transactionId, string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->post('multisignatures/sign', $parameters);
+        return $this->client->post('multisignatures/sign', compact('transactionId', 'secret') + $parameters);
     }
 
     /**
-     * @param array $parameters
+     * @param int    $min
+     * @param int    $lifetime
+     * @param string $keysgroup
+     * @param string $secret
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addMultisignature(array $parameters = []): HttpResponse
+    public function addMultisignature(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->put('multisignatures', $parameters);
+        return $this->client->put('multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
     }
 
     /**
-     * @param array $parameters
+     * @param string $publicKey
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getAccounts(array $parameters = []): HttpResponse
+    public function getAccounts(string $publicKey): HttpResponse
     {
-        return $this->client->get('multisignatures/accounts', $parameters);
+        return $this->client->get('multisignatures/accounts', compact('publicKey'));
     }
 }

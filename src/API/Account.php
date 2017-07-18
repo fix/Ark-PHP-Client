@@ -18,72 +18,74 @@ class Account extends AbstractAPI
     /**
      * Get the balance of an account.
      *
-     * @param array $parameters
+     * @param string $address
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getBalance(array $parameters = []): HttpResponse
+    public function getBalance(string $address): HttpResponse
     {
-        return $this->client->get('accounts/getBalance', $parameters);
+        return $this->client->get('accounts/getBalance', compact('address'));
     }
 
     /**
      * Get the public key of an account.
      *
-     * @param array $parameters
+     * @param string $address
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getPublickey(array $parameters = []): HttpResponse
+    public function getPublickey(string $address): HttpResponse
     {
-        return $this->client->get('accounts/getPublickey', $parameters);
+        return $this->client->get('accounts/getPublickey', compact('address'));
     }
 
     /**
      * Get the delegates of an account.
      *
-     * @param array $parameters
+     * @param string $address
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegates(array $parameters = []): HttpResponse
+    public function getDelegates(string $address): HttpResponse
     {
-        return $this->client->get('accounts/delegates', $parameters);
+        return $this->client->get('accounts/delegates', compact('address'));
     }
 
     /**
      * Get the delegate fee of an account.
      *
-     * @param array $parameters
+     * @param string $address
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegatesFee(array $parameters = []): HttpResponse
+    public function getDelegatesFee(string $address): HttpResponse
     {
-        return $this->client->get('accounts/delegates/fee', $parameters);
+        return $this->client->get('accounts/delegates/fee', compact('address'));
     }
 
     /**
      * Add a new delegate to an account.
      *
-     * @param array $parameters
+     * @param string $secret
+     * @param string $publicKey
+     * @param string $secondSecret
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addDelegates(array $parameters = []): HttpResponse
+    public function addDelegates(string $secret, string $publicKey, string $secondSecret): HttpResponse
     {
-        return $this->client->put('accounts/delegates', $parameters);
+        return $this->client->put('accounts/delegates', compact('secret', 'publicKey', 'secondSecret'));
     }
 
     /**
      * Returns account information of an address.
      *
-     * @param array $parameters
+     * @param string $address
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getAccount(array $parameters = []): HttpResponse
+    public function getAccount(string $address): HttpResponse
     {
-        return $this->client->get('accounts', $parameters);
+        return $this->client->get('accounts', compact('address'));
     }
 }

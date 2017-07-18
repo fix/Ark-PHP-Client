@@ -18,24 +18,24 @@ class Signature extends AbstractAPI
     /**
      * Get the fee for a signature.
      *
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(array $parameters = []): HttpResponse
+    public function getFee(): HttpResponse
     {
-        return $this->client->get('signatures/fee', $parameters);
+        return $this->client->get('signatures/fee');
     }
 
     /**
      * Create a new signature.
      *
-     * @param array $parameters
+     * @param string $secret
+     * @param string $secondSecret
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addSignature(array $parameters = []): HttpResponse
+    public function addSignature(string $secret, string $secondSecret, array $parameters = []): HttpResponse
     {
-        return $this->client->put('signatures', $parameters);
+        return $this->client->put('signatures', compact('secret', 'secondSecret') + $parameters);
     }
 }

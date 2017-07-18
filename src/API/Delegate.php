@@ -16,33 +16,33 @@ use BrianFaust\Http\HttpResponse;
 class Delegate extends AbstractAPI
 {
     /**
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function count(array $parameters = []): HttpResponse
+    public function count(): HttpResponse
     {
-        return $this->client->get('delegates/count', $parameters);
+        return $this->client->get('delegates/count');
     }
 
     /**
-     * @param array $parameters
+     * @param string $q
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function search(array $parameters = []): HttpResponse
+    public function search(string $q, array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/search', $parameters);
+        return $this->client->get('delegates/search', compact('q') + $parameters);
     }
 
     /**
-     * @param array $parameters
+     * @param string $publicKey
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getVoters(array $parameters = []): HttpResponse
+    public function getVoters(string $publicKey, array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/voters', $parameters);
+        return $this->client->get('delegates/voters', compact('publicKey') + $parameters);
     }
 
     /**
@@ -66,42 +66,72 @@ class Delegate extends AbstractAPI
     }
 
     /**
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(array $parameters = []): HttpResponse
+    public function getFee(): HttpResponse
     {
-        return $this->client->get('delegates/fee', $parameters);
+        return $this->client->get('delegates/fee');
     }
 
     /**
-     * @param array $parameters
+     * @param string $generatorPublicKey
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getForgedByAccount(array $parameters = []): HttpResponse
+    public function getForgedByAccount(string $generatorPublicKey): HttpResponse
     {
-        return $this->client->get('delegates/forging/getForgedByAccount', $parameters);
+        return $this->client->get('delegates/forging/getForgedByAccount', compact('generatorPublicKey'));
     }
 
     /**
-     * @param array $parameters
+     * @param string $secret
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
     public function addDelegate(array $parameters = []): HttpResponse
     {
-        return $this->client->put('delegates', $parameters);
+        return $this->client->put('delegates', compact('secret') + $parameters);
     }
 
     /**
-     * @param array $parameters
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function getNextForgers(): HttpResponse
+    {
+        return $this->client->get('delegates/getNextForgers');
+    }
+
+    /**
+     * @param string $secret
+     * @param array  $parameters
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getNextForgers(array $parameters = []): HttpResponse
+    public function enableForging(string $secret, array $parameters = []): HttpResponse
     {
-        return $this->client->get('delegates/getNextForgers', $parameters);
+        return $this->client->post('delegates/forging/enable', compact('secret') + $parameters);
+    }
+
+    /**
+     * @param string $secret
+     * @param array  $parameters
+     *
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function disableForging(string $secret, array $parameters = []): HttpResponse
+    {
+        return $this->client->post('delegates/forging/disable', compact('secret') + $parameters);
+    }
+
+    /**
+     * @param string $publicKey
+     * @param array  $parameters
+     *
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function forgingStatus(string $publicKey, array $parameters = []): HttpResponse
+    {
+        return $this->client->post('delegates/forging/disable', compact('publicKey') + $parameters);
     }
 }

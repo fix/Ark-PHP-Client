@@ -16,6 +16,19 @@ use BrianFaust\Http\HttpResponse;
 class Peer extends AbstractAPI
 {
     /**
+     * Get a single peer.
+     *
+     * @param string $ip
+     * @param int    $port
+     *
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function getPeer(string $ip, int $port): HttpResponse
+    {
+        return $this->client->get('peers/get', compact('ip', 'port'));
+    }
+
+    /**
      * Get all peers.
      *
      * @param array $parameters
@@ -30,24 +43,10 @@ class Peer extends AbstractAPI
     /**
      * Get the peer version.
      *
-     * @param array $parameters
-     *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function version(array $parameters = []): HttpResponse
+    public function version(): HttpResponse
     {
-        return $this->client->get('peers/version', $parameters);
-    }
-
-    /**
-     * Get a single peer.
-     *
-     * @param array $parameters
-     *
-     * @return \BrianFaust\Http\HttpResponse
-     */
-    public function getPeer(array $parameters = []): HttpResponse
-    {
-        return $this->client->get('peers/get', $parameters);
+        return $this->client->get('peers/version');
     }
 }
