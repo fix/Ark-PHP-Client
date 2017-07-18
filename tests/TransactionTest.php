@@ -17,6 +17,19 @@ namespace BrianFaust\Tests\Ark;
 class TransactionTest extends TestCase
 {
     /** @test */
+    public function can_get_transaction()
+    {
+        // Arrange...
+        $id = str_random(34);
+
+        // Act...
+        $response = $this->getClient()->api('Transaction')->getTransaction($id);
+
+        // Assert...
+        $this->assertTrue($response->isSuccess());
+    }
+
+    /** @test */
     public function can_get_transactions()
     {
         // Act...
@@ -27,20 +40,13 @@ class TransactionTest extends TestCase
     }
 
     /** @test */
-    public function can_get_transaction()
-    {
-        // Act...
-        $response = $this->getClient()->api('Transaction')->getTransaction();
-
-        // Assert...
-        $this->assertTrue($response->isSuccess());
-    }
-
-    /** @test */
     public function can_get_unconfirmed_transaction()
     {
+        // Arrange...
+        $id = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Transaction')->getUnconfirmedTransaction();
+        $response = $this->getClient()->api('Transaction')->getUnconfirmedTransaction($id);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -59,8 +65,13 @@ class TransactionTest extends TestCase
     /** @test */
     public function can_add_transactions()
     {
+        // Arrange...
+        $secret = str_random(34);
+        $amount = rand();
+        $recipientId = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Transaction')->addTransactions();
+        $response = $this->getClient()->api('Transaction')->addTransactions($secret, $amount, $recipientId);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

@@ -19,8 +19,11 @@ class MultiSignatureTest extends TestCase
     /** @test */
     public function can_pending()
     {
+        // Arrange...
+        $publicKey = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('MultiSignature')->pending();
+        $response = $this->getClient()->api('MultiSignature')->pending($publicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -29,8 +32,12 @@ class MultiSignatureTest extends TestCase
     /** @test */
     public function can_sign()
     {
+        // Arrange...
+        $transactionId = str_random(34);
+        $secret = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('MultiSignature')->sign();
+        $response = $this->getClient()->api('MultiSignature')->sign($transactionId, $secret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -39,8 +46,14 @@ class MultiSignatureTest extends TestCase
     /** @test */
     public function can_add_multisignature()
     {
+        // Arrange...
+        $min = rand();
+        $lifetime = rand();
+        $keysgroup = str_random(34);
+        $secret = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('MultiSignature')->addMultisignature();
+        $response = $this->getClient()->api('MultiSignature')->addMultisignature($min, $lifetime, $keysgroup, $secret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -49,8 +62,11 @@ class MultiSignatureTest extends TestCase
     /** @test */
     public function can_get_accounts()
     {
+        // Arrange...
+        $publicKey = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('MultiSignature')->getAccounts();
+        $response = $this->getClient()->api('MultiSignature')->getAccounts($publicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

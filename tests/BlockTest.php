@@ -19,8 +19,11 @@ class BlockTest extends TestCase
     /** @test */
     public function can_get_block()
     {
+        // Arrange...
+        $id = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Block')->getBlock();
+        $response = $this->getClient()->api('Block')->getBlock($id);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

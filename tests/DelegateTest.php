@@ -29,8 +29,11 @@ class DelegateTest extends TestCase
     /** @test */
     public function can_search()
     {
+        // Arrange...
+        $q = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Delegate')->search();
+        $response = $this->getClient()->api('Delegate')->search($q);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -39,8 +42,11 @@ class DelegateTest extends TestCase
     /** @test */
     public function can_get_voters()
     {
+        // Arrange...
+        $publicKey = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Delegate')->getVoters();
+        $response = $this->getClient()->api('Delegate')->getVoters($publicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -79,8 +85,11 @@ class DelegateTest extends TestCase
     /** @test */
     public function can_get_forged_by_account()
     {
+        // Arrange...
+        $generatorPublicKey = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Delegate')->getForgedByAccount();
+        $response = $this->getClient()->api('Delegate')->getForgedByAccount($generatorPublicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -89,8 +98,11 @@ class DelegateTest extends TestCase
     /** @test */
     public function can_add_delegate()
     {
+        // Arrange...
+        $secret = str_random(34);
+
         // Act...
-        $response = $this->getClient()->api('Delegate')->addDelegate();
+        $response = $this->getClient()->api('Delegate')->addDelegate($secret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

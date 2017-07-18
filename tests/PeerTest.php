@@ -39,8 +39,12 @@ class PeerTest extends TestCase
     /** @test */
     public function can_get_peer()
     {
+        // Arrange...
+        $ip = str_random(34);
+        $port = rand();
+
         // Act...
-        $response = $this->getClient()->api('Peer')->getPeer();
+        $response = $this->getClient()->api('Peer')->getPeer($ip, $port);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

@@ -89,7 +89,7 @@ class Delegate extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addDelegate(array $parameters = []): HttpResponse
+    public function addDelegate(string $secret, array $parameters = []): HttpResponse
     {
         return $this->client->put('delegates', compact('secret') + $parameters);
     }
