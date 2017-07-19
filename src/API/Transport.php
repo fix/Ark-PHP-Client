@@ -30,7 +30,7 @@ class Transport extends AbstractAPI
      */
     public function blocksCommon(array $ids): HttpResponse
     {
-        return $this->client->get('peer/blocks/common', ['ids' => implode(';', $ids)]);
+        return $this->client->get('peer/blocks/common', ['ids' => implode(',', $ids)]);
     }
 
     /**
@@ -76,7 +76,7 @@ class Transport extends AbstractAPI
      */
     public function transactionsFromIds(array $ids): HttpResponse
     {
-        return $this->client->get('peer/transactionsFromIds', ['ids' => implode(';', $ids)]);
+        return $this->client->get('peer/transactionsFromIds', ['ids' => implode(',', $ids)]);
     }
 
     /**
