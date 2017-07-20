@@ -14,9 +14,8 @@
     },
     "require-dev": {
         "coderabbi/phpumoji": "^0.7.0@beta",
-        "graham-campbell/testbench": "^3.3",
-        "mockery/mockery": "^0.9",
-        "phpunit/phpunit": "^6.1"
+        "mockery/mockery": "^0.9.9",
+        "phpunit/phpunit": "^6.2"
     },
     "autoload": {
         "psr-4": {
