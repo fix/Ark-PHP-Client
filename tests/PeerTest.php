@@ -40,7 +40,7 @@ class PeerTest extends TestCase
     public function can_get_peer()
     {
         // Arrange...
-        $ip   = str_random(34);
+        $ip = str_random(34);
         $port = rand();
 
         // Act...

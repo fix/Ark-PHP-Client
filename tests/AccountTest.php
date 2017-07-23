@@ -74,8 +74,8 @@ class AccountTest extends TestCase
     public function can_add_delegates()
     {
         // Arrange...
-        $secret       = str_random(34);
-        $publicKey    = str_random(34);
+        $secret = str_random(34);
+        $publicKey = str_random(34);
         $secondSecret = str_random(34);
 
         // Act...

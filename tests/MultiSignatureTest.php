@@ -34,7 +34,7 @@ class MultiSignatureTest extends TestCase
     {
         // Arrange...
         $transactionId = str_random(34);
-        $secret        = str_random(34);
+        $secret = str_random(34);
 
         // Act...
         $response = $this->getClient()->api('MultiSignature')->sign($transactionId, $secret);
@@ -47,10 +47,10 @@ class MultiSignatureTest extends TestCase
     public function can_add_multisignature()
     {
         // Arrange...
-        $min       = rand();
-        $lifetime  = rand();
+        $min = rand();
+        $lifetime = rand();
         $keysgroup = str_random(34);
-        $secret    = str_random(34);
+        $secret = str_random(34);
 
         // Act...
         $response = $this->getClient()->api('MultiSignature')->addMultisignature($min, $lifetime, $keysgroup, $secret);
