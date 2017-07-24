@@ -46,7 +46,7 @@ class MultiSignature extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addMultisignature(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): HttpResponse
+    public function create(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): HttpResponse
     {
         return $this->client->put('api/multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
     }
@@ -56,7 +56,7 @@ class MultiSignature extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getAccounts(string $publicKey): HttpResponse
+    public function accounts(string $publicKey): HttpResponse
     {
         return $this->client->get('api/multisignatures/accounts', compact('publicKey'));
     }

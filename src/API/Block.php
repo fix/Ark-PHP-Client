@@ -22,7 +22,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getBlock(string $id): HttpResponse
+    public function block(string $id): HttpResponse
     {
         return $this->client->get('api/blocks/get', compact('id'));
     }
@@ -34,7 +34,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getBlocks(array $parameters = []): HttpResponse
+    public function blocks(array $parameters = []): HttpResponse
     {
         return $this->client->get('api/blocks', $parameters);
     }
@@ -44,7 +44,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getEpoch(): HttpResponse
+    public function epoch(): HttpResponse
     {
         return $this->client->get('api/blocks/getEpoch');
     }
@@ -54,7 +54,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getHeight(): HttpResponse
+    public function height(): HttpResponse
     {
         return $this->client->get('api/blocks/getHeight');
     }
@@ -64,7 +64,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getNethash(): HttpResponse
+    public function nethash(): HttpResponse
     {
         return $this->client->get('api/blocks/getNethash');
     }
@@ -74,7 +74,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(): HttpResponse
+    public function fee(): HttpResponse
     {
         return $this->client->get('api/blocks/getFee');
     }
@@ -84,7 +84,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFees(): HttpResponse
+    public function fees(): HttpResponse
     {
         return $this->client->get('api/blocks/getFees');
     }
@@ -94,7 +94,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getMilestone(): HttpResponse
+    public function milestone(): HttpResponse
     {
         return $this->client->get('api/blocks/getMilestone');
     }
@@ -104,7 +104,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getReward(): HttpResponse
+    public function reward(): HttpResponse
     {
         return $this->client->get('api/blocks/getReward');
     }
@@ -114,7 +114,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getSupply(): HttpResponse
+    public function supply(): HttpResponse
     {
         return $this->client->get('api/blocks/getSupply');
     }
@@ -124,7 +124,7 @@ class Block extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getStatus(): HttpResponse
+    public function status(): HttpResponse
     {
         return $this->client->get('api/blocks/getStatus');
     }

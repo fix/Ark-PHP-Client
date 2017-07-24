@@ -34,14 +34,6 @@ class Transport extends AbstractAPI
     }
 
     /**
-     * @return \BrianFaust\Http\HttpResponse
-     */
-    public function blocks(): HttpResponse
-    {
-        return $this->client->get('peer/blocks');
-    }
-
-    /**
      * @param string $id
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -52,11 +44,19 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * @return \BrianFaust\Http\HttpResponse
+     */
+    public function blocks(): HttpResponse
+    {
+        return $this->client->get('peer/blocks');
+    }
+
+    /**
      * @param array $block
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addBlock(array $block): HttpResponse
+    public function createBlock(array $block): HttpResponse
     {
         return $this->client->post('peer/blocks', compact('block'));
     }
@@ -84,7 +84,7 @@ class Transport extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addTransactions(array $transactions): HttpResponse
+    public function createTransactions(array $transactions): HttpResponse
     {
         return $this->client->post('peer/transactions', compact('transactions'));
     }

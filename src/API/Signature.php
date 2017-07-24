@@ -20,7 +20,7 @@ class Signature extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(): HttpResponse
+    public function fee(): HttpResponse
     {
         return $this->client->get('api/signatures/fee');
     }
@@ -34,7 +34,7 @@ class Signature extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addSignature(string $secret, string $secondSecret, array $parameters = []): HttpResponse
+    public function create(string $secret, string $secondSecret, array $parameters = []): HttpResponse
     {
         return $this->client->put('api/signatures', compact('secret', 'secondSecret') + $parameters);
     }

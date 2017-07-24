@@ -22,7 +22,7 @@ class Account extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getBalance(string $address): HttpResponse
+    public function balance(string $address): HttpResponse
     {
         return $this->client->get('api/accounts/getBalance', compact('address'));
     }
@@ -34,7 +34,7 @@ class Account extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getPublickey(string $address): HttpResponse
+    public function publickey(string $address): HttpResponse
     {
         return $this->client->get('api/accounts/getPublickey', compact('address'));
     }
@@ -46,7 +46,7 @@ class Account extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegates(string $address): HttpResponse
+    public function delegates(string $address): HttpResponse
     {
         return $this->client->get('api/accounts/delegates', compact('address'));
     }
@@ -58,7 +58,7 @@ class Account extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegatesFee(string $address): HttpResponse
+    public function delegatesFee(string $address): HttpResponse
     {
         return $this->client->get('api/accounts/delegates/fee', compact('address'));
     }
@@ -72,7 +72,7 @@ class Account extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addDelegates(string $secret, string $publicKey, string $secondSecret): HttpResponse
+    public function createDelegates(string $secret, string $publicKey, string $secondSecret): HttpResponse
     {
         return $this->client->put('api/accounts/delegates', compact('secret', 'publicKey', 'secondSecret'));
     }
@@ -84,7 +84,7 @@ class Account extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getAccount(string $address): HttpResponse
+    public function account(string $address): HttpResponse
     {
         return $this->client->get('api/accounts', compact('address'));
     }
@@ -92,7 +92,7 @@ class Account extends AbstractAPI
     /**
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getAllAccounts(): HttpResponse
+    public function accounts(): HttpResponse
     {
         return $this->client->get('api/accounts/getAllAccounts');
     }

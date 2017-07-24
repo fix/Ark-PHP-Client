@@ -23,7 +23,7 @@ class Peer extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getPeer(string $ip, int $port): HttpResponse
+    public function peer(string $ip, int $port): HttpResponse
     {
         return $this->client->get('api/peers/get', compact('ip', 'port'));
     }
@@ -35,7 +35,7 @@ class Peer extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getPeers(array $parameters = []): HttpResponse
+    public function peers(array $parameters = []): HttpResponse
     {
         return $this->client->get('api/peers', $parameters);
     }

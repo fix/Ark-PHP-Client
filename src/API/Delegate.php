@@ -40,7 +40,7 @@ class Delegate extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getVoters(string $publicKey, array $parameters = []): HttpResponse
+    public function voters(string $publicKey, array $parameters = []): HttpResponse
     {
         return $this->client->get('api/delegates/voters', compact('publicKey') + $parameters);
     }
@@ -50,7 +50,7 @@ class Delegate extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegate(array $parameters = []): HttpResponse
+    public function delegate(array $parameters = []): HttpResponse
     {
         return $this->client->get('api/delegates/get', $parameters);
     }
@@ -60,7 +60,7 @@ class Delegate extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getDelegates(array $parameters = []): HttpResponse
+    public function delegates(array $parameters = []): HttpResponse
     {
         return $this->client->get('api/delegates', $parameters);
     }
@@ -68,7 +68,7 @@ class Delegate extends AbstractAPI
     /**
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getFee(): HttpResponse
+    public function fee(): HttpResponse
     {
         return $this->client->get('api/delegates/fee');
     }
@@ -78,7 +78,7 @@ class Delegate extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getForgedByAccount(string $generatorPublicKey): HttpResponse
+    public function forgedByAccount(string $generatorPublicKey): HttpResponse
     {
         return $this->client->get('api/delegates/forging/getForgedByAccount', compact('generatorPublicKey'));
     }
@@ -89,7 +89,7 @@ class Delegate extends AbstractAPI
      *
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function addDelegate(string $secret, array $parameters = []): HttpResponse
+    public function create(string $secret, array $parameters = []): HttpResponse
     {
         return $this->client->put('api/delegates', compact('secret') + $parameters);
     }
@@ -97,7 +97,7 @@ class Delegate extends AbstractAPI
     /**
      * @return \BrianFaust\Http\HttpResponse
      */
-    public function getNextForgers(): HttpResponse
+    public function nextForgers(): HttpResponse
     {
         return $this->client->get('api/delegates/getNextForgers');
     }
