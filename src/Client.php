@@ -15,17 +15,32 @@ use BrianFaust\Http\Http;
 
 class Client
 {
-    /** @var array */
-    public $network;
+    /** @var string */
+    public $ip;
+
+    /** @var int */
+    public $port;
+
+    /** @var string */
+    public $nethash;
+
+    /** @var string */
+    public $version;
 
     /**
      * Create a new Ark client instance.
      *
-     * @param array $network
+     * @param string $ip
+     * @param int $port
+     * @param string $nethash
+     * @param string $version
      */
-    public function __construct(array $network)
+    public function __construct(string $ip, int $port, string $nethash, string $version)
     {
-        $this->network = $network;
+        $this->ip = $ip;
+        $this->port = $port;
+        $this->nethash = $nethash;
+        $this->version = $version;
     }
 
     /**
@@ -35,13 +50,10 @@ class Client
      */
     public function api(string $name): API\AbstractAPI
     {
-        $ip = $this->network['activepeer']['ip'];
-        $port = $this->network['activepeer']['port'];
-
-        $client = Http::withBaseUri("http://{$ip}:{$port}/")->withHeaders([
-            'nethash' => $this->network['nethash'],
-            'version' => $this->network['version'],
-            'port'    => $this->network['activepeer']['port'],
+        $client = Http::withBaseUri("http://{$this->ip}:{$this->port}/")->withHeaders([
+            'nethash' => $this->nethash,
+            'version' => $this->version,
+            'port'    => $this->port,
         ]);
 
         $class = "BrianFaust\\Ark\\API\\{$name}";
