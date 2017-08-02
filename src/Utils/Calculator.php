@@ -37,7 +37,7 @@ class Calculator
     public function __construct($dailyProduction, $profitShare)
     {
         $this->dailyProduction = $dailyProduction;
-        $this->profitShare     = $profitShare;
+        $this->profitShare = $profitShare;
     }
 
     /**
