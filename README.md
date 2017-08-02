@@ -14,14 +14,7 @@ $ composer require faustbrian/ark-php-client
 <?php
 
 // Setup a new ark client
-$client = new BrianFaust\Ark\Client([
-    'nethash' => 'some_magical_nethash',
-    'version' => '1.0.1',
-    'activepeer' => [
-        'ip' => 'node1.arknet.cloud',
-        'port' => 4001,
-    ]
-]);
+$client = new BrianFaust\Ark\Client('node1.arknet.cloud', 4001, 'some_magical_nethash', '1.0.1');
 
 // Send a request to peers/version
 $response = $client->api('Peer')->version();
@@ -32,6 +25,21 @@ if ($response->isSuccess()) {
 } else {
     dd('Something went wrong...');
 }
+```
+
+### Calculator
+
+```php
+$calculator = new BrianFaust\Ark\Utils\Calculator(422, 75);
+$calculator->setVotingPool(1000000);
+
+dump($calculator->perSecond(10000));
+dump($calculator->perMinute(10000));
+dump($calculator->perHour(10000));
+dump($calculator->perDay(10000));
+dump($calculator->perWeek(10000));
+dump($calculator->perMonth(10000));
+dump($calculator->perYear(10000));
 ```
 
 ## Testing
