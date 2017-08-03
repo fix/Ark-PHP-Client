@@ -173,6 +173,6 @@ class Calculator
             return $value / 10 ** 8;
         }
 
-        return $value;
+        return (float) $value;
     }
 }
