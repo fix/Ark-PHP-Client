@@ -9,7 +9,7 @@
         "homepage": "https://brianfaust.me"
     }],
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "faustbrian/http": "^1.0@dev"
     },
     "require-dev": {
