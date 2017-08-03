@@ -55,7 +55,7 @@ class MultiSignatureTest extends TestCase
         $secret = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('MultiSignature')->addMultisignature($min, $lifetime, $keysgroup, $secret);
+        $response = $this->getClient()->api('MultiSignature')->create($min, $lifetime, $keysgroup, $secret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -68,7 +68,7 @@ class MultiSignatureTest extends TestCase
         $publicKey = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('MultiSignature')->getAccounts($publicKey);
+        $response = $this->getClient()->api('MultiSignature')->accounts($publicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

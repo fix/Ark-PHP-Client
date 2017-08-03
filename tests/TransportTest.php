@@ -71,7 +71,7 @@ class TransportTest extends TestCase
         $block = [];
 
         // Act...
-        $response = $this->getClient()->api('Transport')->addBlock($block);
+        $response = $this->getClient()->api('Transport')->createBlock($block);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -107,7 +107,7 @@ class TransportTest extends TestCase
         $transactions = [];
 
         // Act...
-        $response = $this->getClient()->api('Transport')->addTransactions($transactions);
+        $response = $this->getClient()->api('Transport')->createTransactions($transactions);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

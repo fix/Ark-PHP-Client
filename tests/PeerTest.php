@@ -22,7 +22,7 @@ class PeerTest extends TestCase
     public function can_get_peers()
     {
         // Act...
-        $response = $this->getClient()->api('Peer')->getPeers();
+        $response = $this->getClient()->api('Peer')->peers();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -46,7 +46,7 @@ class PeerTest extends TestCase
         $port = rand();
 
         // Act...
-        $response = $this->getClient()->api('Peer')->getPeer($ip, $port);
+        $response = $this->getClient()->api('Peer')->peer($ip, $port);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

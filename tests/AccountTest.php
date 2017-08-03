@@ -27,7 +27,7 @@ class AccountTest extends TestCase
         $address = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Account')->getBalance($address);
+        $response = $this->getClient()->api('Account')->balance($address);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -40,7 +40,7 @@ class AccountTest extends TestCase
         $address = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Account')->getPublickey($address);
+        $response = $this->getClient()->api('Account')->publicKey($address);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -53,7 +53,7 @@ class AccountTest extends TestCase
         $address = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Account')->getDelegates($address);
+        $response = $this->getClient()->api('Account')->delegates($address);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -66,7 +66,7 @@ class AccountTest extends TestCase
         $address = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Account')->getDelegatesFee($address);
+        $response = $this->getClient()->api('Account')->delegatesFee($address);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -81,7 +81,7 @@ class AccountTest extends TestCase
         $secondSecret = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Account')->addDelegates($secret, $publicKey, $secondSecret);
+        $response = $this->getClient()->api('Account')->createDelegates($secret, $publicKey, $secondSecret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -94,17 +94,7 @@ class AccountTest extends TestCase
         $address = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Account')->getAccount($address);
-
-        // Assert...
-        $this->assertTrue($response->isSuccess());
-    }
-
-    /** @test */
-    public function can_count()
-    {
-        // Act...
-        $response = $this->getClient()->api('Account')->count();
+        $response = $this->getClient()->api('Account')->account($address);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

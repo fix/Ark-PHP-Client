@@ -48,7 +48,7 @@ class DelegateTest extends TestCase
         $publicKey = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Delegate')->getVoters($publicKey);
+        $response = $this->getClient()->api('Delegate')->voters($publicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -58,7 +58,7 @@ class DelegateTest extends TestCase
     public function can_get_delegate()
     {
         // Act...
-        $response = $this->getClient()->api('Delegate')->getDelegate();
+        $response = $this->getClient()->api('Delegate')->delegate();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -68,7 +68,7 @@ class DelegateTest extends TestCase
     public function can_get_delegates()
     {
         // Act...
-        $response = $this->getClient()->api('Delegate')->getDelegates();
+        $response = $this->getClient()->api('Delegate')->delegates();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -78,7 +78,7 @@ class DelegateTest extends TestCase
     public function can_get_fee()
     {
         // Act...
-        $response = $this->getClient()->api('Delegate')->getFee();
+        $response = $this->getClient()->api('Delegate')->fee();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -91,7 +91,7 @@ class DelegateTest extends TestCase
         $generatorPublicKey = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Delegate')->getForgedByAccount($generatorPublicKey);
+        $response = $this->getClient()->api('Delegate')->forgedByAccount($generatorPublicKey);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -104,7 +104,7 @@ class DelegateTest extends TestCase
         $secret = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Delegate')->addDelegate($secret);
+        $response = $this->getClient()->api('Delegate')->create($secret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -114,7 +114,7 @@ class DelegateTest extends TestCase
     public function can_get_next_forgers()
     {
         // Act...
-        $response = $this->getClient()->api('Delegate')->getNextForgers();
+        $response = $this->getClient()->api('Delegate')->nextForgers();
 
         // Assert...
         $this->assertTrue($response->isSuccess());

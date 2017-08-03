@@ -25,7 +25,7 @@ class TransactionTest extends TestCase
         $id = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Transaction')->getTransaction($id);
+        $response = $this->getClient()->api('Transaction')->transaction($id);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -35,7 +35,7 @@ class TransactionTest extends TestCase
     public function can_get_transactions()
     {
         // Act...
-        $response = $this->getClient()->api('Transaction')->getTransactions();
+        $response = $this->getClient()->api('Transaction')->transactions();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -48,7 +48,7 @@ class TransactionTest extends TestCase
         $id = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Transaction')->getUnconfirmedTransaction($id);
+        $response = $this->getClient()->api('Transaction')->unconfirmedTransaction($id);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -58,7 +58,7 @@ class TransactionTest extends TestCase
     public function can_get_unconfirmed_transactions()
     {
         // Act...
-        $response = $this->getClient()->api('Transaction')->getUnconfirmedTransactions();
+        $response = $this->getClient()->api('Transaction')->unconfirmedTransactions();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -73,7 +73,7 @@ class TransactionTest extends TestCase
         $recipientId = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Transaction')->addTransactions($secret, $amount, $recipientId);
+        $response = $this->getClient()->api('Transaction')->create($secret, $amount, $recipientId);
 
         // Assert...
         $this->assertTrue($response->isSuccess());

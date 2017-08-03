@@ -25,7 +25,7 @@ class BlockTest extends TestCase
         $id = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Block')->getBlock($id);
+        $response = $this->getClient()->api('Block')->block($id);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -35,7 +35,7 @@ class BlockTest extends TestCase
     public function can_get_blocks()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getBlocks();
+        $response = $this->getClient()->api('Block')->blocks();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -45,7 +45,7 @@ class BlockTest extends TestCase
     public function can_get_epoch()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getEpoch();
+        $response = $this->getClient()->api('Block')->epoch();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -55,7 +55,7 @@ class BlockTest extends TestCase
     public function can_get_height()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getHeight();
+        $response = $this->getClient()->api('Block')->height();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -65,7 +65,7 @@ class BlockTest extends TestCase
     public function can_get_nethash()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getNethash();
+        $response = $this->getClient()->api('Block')->nethash();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -75,7 +75,7 @@ class BlockTest extends TestCase
     public function can_get_fee()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getFee();
+        $response = $this->getClient()->api('Block')->fee();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -85,7 +85,7 @@ class BlockTest extends TestCase
     public function can_get_fees()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getFees();
+        $response = $this->getClient()->api('Block')->fees();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -95,7 +95,7 @@ class BlockTest extends TestCase
     public function can_get_milestone()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getMilestone();
+        $response = $this->getClient()->api('Block')->milestone();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -105,7 +105,7 @@ class BlockTest extends TestCase
     public function can_get_reward()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getReward();
+        $response = $this->getClient()->api('Block')->reward();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -115,7 +115,7 @@ class BlockTest extends TestCase
     public function can_get_supply()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getSupply();
+        $response = $this->getClient()->api('Block')->supply();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -125,7 +125,7 @@ class BlockTest extends TestCase
     public function can_get_status()
     {
         // Act...
-        $response = $this->getClient()->api('Block')->getStatus();
+        $response = $this->getClient()->api('Block')->status();
 
         // Assert...
         $this->assertTrue($response->isSuccess());

@@ -22,7 +22,7 @@ class SignatureTest extends TestCase
     public function can_get_fee()
     {
         // Act...
-        $response = $this->getClient()->api('Signature')->getFee();
+        $response = $this->getClient()->api('Signature')->fee();
 
         // Assert...
         $this->assertTrue($response->isSuccess());
@@ -36,7 +36,7 @@ class SignatureTest extends TestCase
         $secondSecret = str_random(34);
 
         // Act...
-        $response = $this->getClient()->api('Signature')->addSignature($secret, $secondSecret);
+        $response = $this->getClient()->api('Signature')->create($secret, $secondSecret);
 
         // Assert...
         $this->assertTrue($response->isSuccess());
