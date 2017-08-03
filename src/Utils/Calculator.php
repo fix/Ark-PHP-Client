@@ -169,7 +169,7 @@ class Calculator
             return $value;
         }
 
-        if (strlen($value) >= 9) {
+        if (strlen((string) $value) >= 9) {
             return $value / 10 ** 8;
         }
 
