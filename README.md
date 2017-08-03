@@ -2,9 +2,8 @@
 
 ## Introduction
 
-All `create*` and `add*` methods should be used at your own risk because they could potentially leak your passphrases. Take a look at this [issue](https://github.com/faustbrian/Ark-PHP-Client/issues/3) to find out more.
-
-It is recommended to set up a small ExpressJS Server that will function as a proxy and provides more security.
+All `create*` and `add*` methods should be used at your own risk because they could potentially leak your passphrases. It is recommended to set up a small ExpressJS Server that will function as a proxy and provides more security.
+ Take a look at this [issue](https://github.com/faustbrian/Ark-PHP-Client/issues/3) to find out more.
 
 ## Installation
 
