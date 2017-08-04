@@ -169,6 +169,10 @@ class Calculator
             return $value;
         }
 
+        if (strpos($value, ',')) {
+            return (float) $this->decimalToInt($value);
+        }
+
         if (strlen((string) $value) >= 9) {
             return $value / 10 ** 8;
         }
