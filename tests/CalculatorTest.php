@@ -26,65 +26,47 @@ class CalculatorTest extends TestCase
     public function can_calculate_with_floats()
     {
         // Arrange...
-        $mock = m::mock(Calculator::class);
         $votingPool = 1000000.00;
         $userPool = 10000.00;
         $expectedShare = 3.165;
 
-        // Expect...
-        $mock->shouldReceive('setVotingPool')->with($votingPool)->andReturn([]);
-        $mock->shouldReceive('perDay')->with($userPool)->andReturn($expectedShare);
-
         // Act...
         $calculator = new Calculator(422, 75);
         $calculator->setVotingPool($votingPool);
-        $result = $calculator->perDay($userPool);
 
         // Assert...
-        $this->assertSame($expectedShare, $result);
+        $this->assertSame($expectedShare, $calculator->perDay($userPool));
     }
 
     /** @test */
     public function can_calculate_with_decimals()
     {
         // Arrange...
-        $mock = m::mock(Calculator::class);
         $votingPool = '1,000,000';
         $userPool = '10,000';
         $expectedShare = 3.165;
 
-        // Expect...
-        $mock->shouldReceive('setVotingPool')->with($votingPool)->andReturn([]);
-        $mock->shouldReceive('perDay')->with($userPool)->andReturn($expectedShare);
-
         // Act...
         $calculator = new Calculator(422, 75);
         $calculator->setVotingPool($votingPool);
-        $result = $calculator->perDay($userPool);
 
         // Assert...
-        $this->assertSame($expectedShare, $result);
+        $this->assertSame($expectedShare, $calculator->perDay($userPool));
     }
 
     /** @test */
     public function can_calculate_with_integers()
     {
         // Arrange...
-        $mock = m::mock(Calculator::class);
         $votingPool = 10000000;
         $userPool = 100000;
         $expectedShare = 3.165;
 
-        // Expect...
-        $mock->shouldReceive('setVotingPool')->with($votingPool)->andReturn([]);
-        $mock->shouldReceive('perDay')->with($userPool)->andReturn($expectedShare);
-
         // Act...
         $calculator = new Calculator(422, 75);
         $calculator->setVotingPool($votingPool);
-        $result = $calculator->perDay($userPool);
 
         // Assert...
-        $this->assertSame($expectedShare, $result);
+        $this->assertSame($expectedShare, $calculator->perDay($userPool));
     }
 }
