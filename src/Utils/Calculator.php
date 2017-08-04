@@ -169,8 +169,8 @@ class Calculator
             return $value;
         }
 
-        if (strpos($value, ',')) {
-            return (float) $this->decimalToInt($value);
+        if (strpos((string) $value, ',')) {
+            return (float) str_replace(',', null, $value);
         }
 
         if (strlen((string) $value) >= 9) {
