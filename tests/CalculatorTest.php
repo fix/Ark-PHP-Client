@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace BrianFaust\Tests\Ark;
 
-use BrianFaust\Ark\Client;
 use Mockery as m;
+use BrianFaust\Ark\Client;
 use BrianFaust\Ark\Utils\Calculator;
 
 /**
