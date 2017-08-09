@@ -18,6 +18,7 @@ use BrianFaust\Http\HttpResponse;
 class Transport extends AbstractAPI
 {
     /**
+     * Get a list of peers.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function list(): HttpResponse
@@ -26,6 +27,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get a list of blocks by ids.
      * @param array $ids
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -36,6 +38,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get all single block.
      * @param string $id
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -46,6 +49,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get all blocks.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function blocks(): HttpResponse
@@ -54,6 +58,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Create a new block.
      * @param array $block
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -64,6 +69,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get all transactions.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function transactions(): HttpResponse
@@ -72,6 +78,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get a list of transactions by ids.
      * @param array $ids
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -82,6 +89,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Create a new transaction.
      * @param array $transactions
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -92,6 +100,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get the blockchain height.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function height(): HttpResponse
@@ -100,6 +109,7 @@ class Transport extends AbstractAPI
     }
 
     /**
+     * Get the blockchain status.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function status(): HttpResponse

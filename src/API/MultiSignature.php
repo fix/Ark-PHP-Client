@@ -18,6 +18,7 @@ use BrianFaust\Http\HttpResponse;
 class MultiSignature extends AbstractAPI
 {
     /**
+     * Get pending multi signature transactions.
      * @param string $publicKey
      *
      * @return \BrianFaust\Http\HttpResponse
@@ -28,6 +29,8 @@ class MultiSignature extends AbstractAPI
     }
 
     /**
+     * Sign a new multi signature.
+     *
      * @param string $transactionId
      * @param string $secret
      * @param array  $parameters
@@ -40,6 +43,8 @@ class MultiSignature extends AbstractAPI
     }
 
     /**
+     * Create a new multi signature.
+     *
      * @param int    $min
      * @param int    $lifetime
      * @param string $keysgroup
@@ -54,6 +59,7 @@ class MultiSignature extends AbstractAPI
     }
 
     /**
+     * Get a list of accounts.
      * @param string $publicKey
      *
      * @return \BrianFaust\Http\HttpResponse

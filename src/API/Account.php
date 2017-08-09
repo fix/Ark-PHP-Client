@@ -92,6 +92,7 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Get a list of accounts.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function accounts(): HttpResponse
@@ -100,6 +101,7 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Get a list of top accounts.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function top(): HttpResponse
@@ -108,6 +110,7 @@ class Account extends AbstractAPI
     }
 
     /**
+     * Get the count of accounts.
      * @return \BrianFaust\Http\HttpResponse
      */
     public function count(): HttpResponse
