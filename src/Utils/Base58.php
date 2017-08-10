@@ -49,7 +49,7 @@ class Base58
     }
 
     /**
-     * Decode and verify the checksum of a Base58 encoded string
+     * Decode and verify the checksum of a Base58 encoded string.
      *
      * @param  string $value
      *

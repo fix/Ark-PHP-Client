@@ -24,10 +24,10 @@ class Base58Test extends TestCase
     public function can_encode()
     {
         // Arrange...
-        $value = "Hello World";
+        $value = 'Hello World';
 
         // Expect...
-        $expected = "JxF12TrwUP45BMd";
+        $expected = 'JxF12TrwUP45BMd';
 
         // Act...
         $actual = Base58::encode($value);
@@ -40,10 +40,10 @@ class Base58Test extends TestCase
     public function can_decode()
     {
         // Arrange...
-        $value = "JxF12TrwUP45BMd";
+        $value = 'JxF12TrwUP45BMd';
 
         // Expect...
-        $expected = "Hello World";
+        $expected = 'Hello World';
 
         // Act...
         $actual = Base58::decode($value);
@@ -56,10 +56,10 @@ class Base58Test extends TestCase
     public function can_encode_check()
     {
         // Arrange...
-        $value = "Hello World";
+        $value = 'Hello World';
 
         // Expect...
-        $expected = "32UWxgjUJDXeRwy6c6Fxf";
+        $expected = '32UWxgjUJDXeRwy6c6Fxf';
 
         // Act...
         $actual = Base58::encodeCheck($value);
@@ -72,10 +72,10 @@ class Base58Test extends TestCase
     public function can_decode_check()
     {
         // Arrange...
-        $value = "32UWxgjUJDXeRwy6c6Fxf";
+        $value = '32UWxgjUJDXeRwy6c6Fxf';
 
         // Expect...
-        $expected = "Hello World";
+        $expected = 'Hello World';
 
         // Act...
         $actual = Base58::decodeCheck($value);
