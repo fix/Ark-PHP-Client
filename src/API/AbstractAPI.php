@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use Illuminate\Support\Arr;
 use BrianFaust\Http\HttpResponse;
 use Illuminate\Support\Collection;
 use BrianFaust\Http\PendingHttpRequest;
