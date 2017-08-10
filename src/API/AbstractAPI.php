@@ -87,6 +87,6 @@ abstract class AbstractAPI
             throw new InvalidResponseException($body['error']);
         }
 
-        return (new Collection($body))->except('success'); // Arr::except($body, 'success');
+        return (new Collection($body))->except('success');
     }
 }
