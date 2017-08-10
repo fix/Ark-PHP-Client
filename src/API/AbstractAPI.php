@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Ark\Exceptions\InvalidResponseException;
-use BrianFaust\Http\HttpResponse;
-use BrianFaust\Http\PendingHttpRequest;
 use Illuminate\Support\Arr;
+use BrianFaust\Http\HttpResponse;
 use Illuminate\Support\Collection;
+use BrianFaust\Http\PendingHttpRequest;
+use BrianFaust\Ark\Exceptions\InvalidResponseException;
 
 abstract class AbstractAPI
 {
@@ -83,7 +83,7 @@ abstract class AbstractAPI
     {
         $body = $response->json();
 
-        if (!$body['success']) {
+        if (! $body['success']) {
             throw new InvalidResponseException($body['error']);
         }
 

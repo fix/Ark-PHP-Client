@@ -39,8 +39,8 @@ class Client
      */
     public function __construct(string $ip, int $port, string $nethash, string $version)
     {
-        $this->ip      = $ip;
-        $this->port    = $port;
+        $this->ip = $ip;
+        $this->port = $port;
         $this->nethash = $nethash;
         $this->version = $version;
     }
