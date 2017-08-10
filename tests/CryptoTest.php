@@ -25,7 +25,7 @@ class CryptoTest extends TestCase
     {
         // Arrange...
         $publicKey = '026972bdafa405f33a293b047798ff9cef3d2c3ab59e89c04d394df35147c17921';
-        $address   = 'Aan1H7m2T6yBVGjRBAa8HYW8xdfoPmrNwD';
+        $address = 'Aan1H7m2T6yBVGjRBAa8HYW8xdfoPmrNwD';
 
         // Act...
         $result = (new Crypto())->getAddress($publicKey);
