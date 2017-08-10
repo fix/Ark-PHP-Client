@@ -21,7 +21,7 @@ use BrianFaust\Ark\Utils\Crypto;
 class CryptoTest extends TestCase
 {
     /** @test */
-    public function can_get_balance()
+    public function can_get_address_from_public_key()
     {
         // Arrange...
         $publicKey = '026972bdafa405f33a293b047798ff9cef3d2c3ab59e89c04d394df35147c17921';
@@ -32,5 +32,19 @@ class CryptoTest extends TestCase
 
         // Assert...
         $this->assertSame($result, $address);
+    }
+
+    /** @test */
+    public function can_get_wif_from_secret()
+    {
+        // Arrange...
+        $secret = env('ARK_TESTING_SECRET');
+        $wif = env('ARK_TESTING_WIF');
+
+        // Act...
+        $result = (new Crypto())->getWif($secret);
+
+        // Assert...
+        $this->assertSame($result, $wif);
     }
 }
