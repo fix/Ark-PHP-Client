@@ -13,18 +13,18 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Http\HttpResponse;
+use Illuminate\Support\Collection;
 
 class Signature extends AbstractAPI
 {
     /**
      * Get the fee for a signature.
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function fee(): HttpResponse
+    public function fee(): Collection
     {
-        return $this->client->get('api/signatures/fee');
+        return $this->get('api/signatures/fee');
     }
 
     /**
@@ -34,10 +34,10 @@ class Signature extends AbstractAPI
      * @param string $secondSecret
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function create(string $secret, string $secondSecret, array $parameters = []): HttpResponse
+    public function create(string $secret, string $secondSecret, array $parameters = []): Collection
     {
-        return $this->client->put('api/signatures', compact('secret', 'secondSecret') + $parameters);
+        return $this->put('api/signatures', compact('secret', 'secondSecret') + $parameters);
     }
 }

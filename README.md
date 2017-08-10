@@ -2,8 +2,9 @@
 
 ## Introduction
 
-All `create*` and `add*` methods should be used at your own risk because they could potentially leak your passphrases. It is recommended to set up a small ExpressJS Server that will function as a proxy and provides more security.
- Take a look at this [issue](https://github.com/faustbrian/Ark-PHP-Client/issues/3) to find out more.
+All `create*` and `add*` methods should be used at your own risk because they could potentially leak your passphrases. For now it is recommended to set up a small ExpressJS Server that will function as a proxy and provides more security. Take a look at this [issue](https://github.com/faustbrian/Ark-PHP-Client/issues/3) to find out more.
+
+If you have the time and knowledge of how to create signed transaction objects feel free to send a PR so that all `create*` and `add*` methods could be deperecated.
 
 ## Installation
 
@@ -21,14 +22,14 @@ $ composer require faustbrian/ark-php-client
 // Setup a new ark client
 $client = new BrianFaust\Ark\Client('node1.arknet.cloud', 4001, 'some_magical_nethash', '1.0.1');
 
-// Send a request to peers/version
-$response = $client->api('Peer')->version();
+// Use try/catch to catch the exception thrown if the response contains "success=false" since ark-node doesn't use proper status codes.
+try {
+    // Send a request to peers/version
+    $response = $client->api('Peer')->version();
 
-// Check if everything went fine
-if ($response->isSuccess()) {
-    dd($response->json());
-} else {
-    dd('Something went wrong...');
+    dd($response);
+} catch (BrianFaust\Ark\Exceptions\InvalidResponseException $e) {
+    dd($e->getMessage());
 }
 ```
 

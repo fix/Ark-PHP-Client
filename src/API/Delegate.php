@@ -13,127 +13,127 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Http\HttpResponse;
+use Illuminate\Support\Collection;
 
 class Delegate extends AbstractAPI
 {
     /**
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function count(): HttpResponse
+    public function count(): Collection
     {
-        return $this->client->get('api/delegates/count');
+        return $this->get('api/delegates/count');
     }
 
     /**
      * @param string $q
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function search(string $q, array $parameters = []): HttpResponse
+    public function search(string $q, array $parameters = []): Collection
     {
-        return $this->client->get('api/delegates/search', compact('q') + $parameters);
+        return $this->get('api/delegates/search', compact('q') + $parameters);
     }
 
     /**
      * @param string $publicKey
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function voters(string $publicKey, array $parameters = []): HttpResponse
+    public function voters(string $publicKey, array $parameters = []): Collection
     {
-        return $this->client->get('api/delegates/voters', compact('publicKey') + $parameters);
+        return $this->get('api/delegates/voters', compact('publicKey') + $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function delegate(array $parameters = []): HttpResponse
+    public function delegate(array $parameters = []): Collection
     {
-        return $this->client->get('api/delegates/get', $parameters);
+        return $this->get('api/delegates/get', $parameters);
     }
 
     /**
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function delegates(array $parameters = []): HttpResponse
+    public function delegates(array $parameters = []): Collection
     {
-        return $this->client->get('api/delegates', $parameters);
+        return $this->get('api/delegates', $parameters);
     }
 
     /**
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function fee(): HttpResponse
+    public function fee(): Collection
     {
-        return $this->client->get('api/delegates/fee');
+        return $this->get('api/delegates/fee');
     }
 
     /**
      * @param string $generatorPublicKey
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function forgedByAccount(string $generatorPublicKey): HttpResponse
+    public function forgedByAccount(string $generatorPublicKey): Collection
     {
-        return $this->client->get('api/delegates/forging/getForgedByAccount', compact('generatorPublicKey'));
+        return $this->get('api/delegates/forging/getForgedByAccount', compact('generatorPublicKey'));
     }
 
     /**
      * @param string $secret
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function create(string $secret, array $parameters = []): HttpResponse
+    public function create(string $secret, array $parameters = []): Collection
     {
-        return $this->client->put('api/delegates', compact('secret') + $parameters);
+        return $this->put('api/delegates', compact('secret') + $parameters);
     }
 
     /**
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function nextForgers(): HttpResponse
+    public function nextForgers(): Collection
     {
-        return $this->client->get('api/delegates/getNextForgers');
-    }
-
-    /**
-     * @param string $secret
-     * @param array  $parameters
-     *
-     * @return \BrianFaust\Http\HttpResponse
-     */
-    public function enableForging(string $secret, array $parameters = []): HttpResponse
-    {
-        return $this->client->post('api/delegates/forging/enable', compact('secret') + $parameters);
+        return $this->get('api/delegates/getNextForgers');
     }
 
     /**
      * @param string $secret
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function disableForging(string $secret, array $parameters = []): HttpResponse
+    public function enableForging(string $secret, array $parameters = []): Collection
     {
-        return $this->client->post('api/delegates/forging/disable', compact('secret') + $parameters);
+        return $this->post('api/delegates/forging/enable', compact('secret') + $parameters);
+    }
+
+    /**
+     * @param string $secret
+     * @param array  $parameters
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function disableForging(string $secret, array $parameters = []): Collection
+    {
+        return $this->post('api/delegates/forging/disable', compact('secret') + $parameters);
     }
 
     /**
      * @param string $publicKey
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function forgingStatus(string $publicKey, array $parameters = []): HttpResponse
+    public function forgingStatus(string $publicKey, array $parameters = []): Collection
     {
-        return $this->client->post('api/delegates/forging/disable', compact('publicKey') + $parameters);
+        return $this->post('api/delegates/forging/disable', compact('publicKey') + $parameters);
     }
 }

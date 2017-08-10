@@ -13,19 +13,20 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Http\HttpResponse;
+use Illuminate\Support\Collection;
 
 class MultiSignature extends AbstractAPI
 {
     /**
      * Get pending multi signature transactions.
+     *
      * @param string $publicKey
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function pending(string $publicKey): HttpResponse
+    public function pending(string $publicKey): Collection
     {
-        return $this->client->get('api/multisignatures/pending', compact('publicKey'));
+        return $this->get('api/multisignatures/pending', compact('publicKey'));
     }
 
     /**
@@ -35,11 +36,11 @@ class MultiSignature extends AbstractAPI
      * @param string $secret
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function sign(string $transactionId, string $secret, array $parameters = []): HttpResponse
+    public function sign(string $transactionId, string $secret, array $parameters = []): Collection
     {
-        return $this->client->post('api/multisignatures/sign', compact('transactionId', 'secret') + $parameters);
+        return $this->post('api/multisignatures/sign', compact('transactionId', 'secret') + $parameters);
     }
 
     /**
@@ -51,21 +52,22 @@ class MultiSignature extends AbstractAPI
      * @param string $secret
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function create(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): HttpResponse
+    public function create(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): Collection
     {
-        return $this->client->put('api/multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
+        return $this->put('api/multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
     }
 
     /**
      * Get a list of accounts.
+     *
      * @param string $publicKey
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function accounts(string $publicKey): HttpResponse
+    public function accounts(string $publicKey): Collection
     {
-        return $this->client->get('api/multisignatures/accounts', compact('publicKey'));
+        return $this->get('api/multisignatures/accounts', compact('publicKey'));
     }
 }

@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Http\HttpResponse;
+use Illuminate\Support\Collection;
 
 class Transaction extends AbstractAPI
 {
@@ -22,11 +22,11 @@ class Transaction extends AbstractAPI
      *
      * @param string $id
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function transaction(string $id): HttpResponse
+    public function transaction(string $id): Collection
     {
-        return $this->client->get('api/transactions/get', compact('id'));
+        return $this->get('api/transactions/get', compact('id'));
     }
 
     /**
@@ -34,11 +34,11 @@ class Transaction extends AbstractAPI
      *
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function transactions(array $parameters = []): HttpResponse
+    public function transactions(array $parameters = []): Collection
     {
-        return $this->client->get('api/transactions', $parameters);
+        return $this->get('api/transactions', $parameters);
     }
 
     /**
@@ -46,11 +46,11 @@ class Transaction extends AbstractAPI
      *
      * @param string $id
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function unconfirmedTransaction(string $id): HttpResponse
+    public function unconfirmedTransaction(string $id): Collection
     {
-        return $this->client->get('api/transactions/unconfirmed/get', compact('id'));
+        return $this->get('api/transactions/unconfirmed/get', compact('id'));
     }
 
     /**
@@ -58,11 +58,11 @@ class Transaction extends AbstractAPI
      *
      * @param array $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function unconfirmedTransactions(array $parameters = []): HttpResponse
+    public function unconfirmedTransactions(array $parameters = []): Collection
     {
-        return $this->client->get('api/transactions/unconfirmed', $parameters);
+        return $this->get('api/transactions/unconfirmed', $parameters);
     }
 
     /**
@@ -73,10 +73,10 @@ class Transaction extends AbstractAPI
      * @param string $recipientId
      * @param array  $parameters
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function create(string $secret, int $amount, string $recipientId, array $parameters = []): HttpResponse
+    public function create(string $secret, int $amount, string $recipientId, array $parameters = []): Collection
     {
-        return $this->client->put('api/transactions', compact('secret', 'amount', 'recipientId') + $parameters);
+        return $this->put('api/transactions', compact('secret', 'amount', 'recipientId') + $parameters);
     }
 }

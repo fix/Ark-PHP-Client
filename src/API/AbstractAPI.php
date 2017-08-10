@@ -13,14 +13,18 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
+use BrianFaust\Ark\Exceptions\InvalidResponseException;
+use BrianFaust\Http\HttpResponse;
 use BrianFaust\Http\PendingHttpRequest;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 abstract class AbstractAPI
 {
     /**
      * @var \BrianFaust\Http\PendingHttpRequest
      */
-    protected $client;
+    private $client;
 
     /**
      * Create a new API class instance.
@@ -30,5 +34,59 @@ abstract class AbstractAPI
     public function __construct(PendingHttpRequest $client)
     {
         $this->client = $client;
+    }
+
+    /**
+     * Create and send an Http "GET" request.
+     */
+    protected function get(string $url, array $params = []): Collection
+    {
+        return $this->handle($this->client->get($url, $params));
+    }
+
+    /**
+     * Create and send an Http "POST" request.
+     */
+    protected function post(string $url, array $params = []): Collection
+    {
+        return $this->handle($this->client->post($url, $params));
+    }
+
+    /**
+     * Create and send an Http "PUT" request.
+     */
+    protected function put(string $url, array $params = []): Collection
+    {
+        return $this->handle($this->client->put($url, $params));
+    }
+
+    /**
+     * Create and send an Http "PATCH" request.
+     */
+    protected function patch(string $url, array $params = []): Collection
+    {
+        return $this->handle($this->client->patch($url, $params));
+    }
+
+    /**
+     * Create and send an Http "DELETE" request.
+     */
+    protected function delete(string $url, array $params = []): Collection
+    {
+        return $this->handle($this->client->delete($url, $params));
+    }
+
+    /**
+     * Handle the response format ark-node uses.
+     */
+    private function handle(HttpResponse $response): Collection
+    {
+        $body = $response->json();
+
+        if (!$body['success']) {
+            throw new InvalidResponseException($body['error']);
+        }
+
+        return (new Collection($body))->except('success'); // Arr::except($body, 'success');
     }
 }

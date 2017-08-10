@@ -13,18 +13,18 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\API;
 
-use BrianFaust\Http\HttpResponse;
+use Illuminate\Support\Collection;
 
 class Transport extends AbstractAPI
 {
     /**
      * Get a list of peers.
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function list(): HttpResponse
+    public function list(): Collection
     {
-        return $this->client->get('peer/list');
+        return $this->get('peer/list');
     }
 
     /**
@@ -32,11 +32,11 @@ class Transport extends AbstractAPI
      *
      * @param array $ids
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function blocksCommon(array $ids): HttpResponse
+    public function blocksCommon(array $ids): Collection
     {
-        return $this->client->get('peer/blocks/common', ['ids' => implode(',', $ids)]);
+        return $this->get('peer/blocks/common', ['ids' => implode(',', $ids)]);
     }
 
     /**
@@ -44,21 +44,21 @@ class Transport extends AbstractAPI
      *
      * @param string $id
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function block(string $id): HttpResponse
+    public function block(string $id): Collection
     {
-        return $this->client->get('peer/block', compact('id'));
+        return $this->get('peer/block', compact('id'));
     }
 
     /**
      * Get all blocks.
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function blocks(): HttpResponse
+    public function blocks(): Collection
     {
-        return $this->client->get('peer/blocks');
+        return $this->get('peer/blocks');
     }
 
     /**
@@ -66,21 +66,21 @@ class Transport extends AbstractAPI
      *
      * @param array $block
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function createBlock(array $block): HttpResponse
+    public function createBlock(array $block): Collection
     {
-        return $this->client->post('peer/blocks', compact('block'));
+        return $this->post('peer/blocks', compact('block'));
     }
 
     /**
      * Get all transactions.
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function transactions(): HttpResponse
+    public function transactions(): Collection
     {
-        return $this->client->get('peer/transactions');
+        return $this->get('peer/transactions');
     }
 
     /**
@@ -88,11 +88,11 @@ class Transport extends AbstractAPI
      *
      * @param array $ids
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function transactionsFromIds(array $ids): HttpResponse
+    public function transactionsFromIds(array $ids): Collection
     {
-        return $this->client->get('peer/transactionsFromIds', ['ids' => implode(',', $ids)]);
+        return $this->get('peer/transactionsFromIds', ['ids' => implode(',', $ids)]);
     }
 
     /**
@@ -100,30 +100,30 @@ class Transport extends AbstractAPI
      *
      * @param array $transactions
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function createTransactions(array $transactions): HttpResponse
+    public function createTransactions(array $transactions): Collection
     {
-        return $this->client->post('peer/transactions', compact('transactions'));
+        return $this->post('peer/transactions', compact('transactions'));
     }
 
     /**
      * Get the blockchain height.
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function height(): HttpResponse
+    public function height(): Collection
     {
-        return $this->client->get('peer/height');
+        return $this->get('peer/height');
     }
 
     /**
      * Get the blockchain status.
      *
-     * @return \BrianFaust\Http\HttpResponse
+     * @return \Illuminate\Support\Collection
      */
-    public function status(): HttpResponse
+    public function status(): Collection
     {
-        return $this->client->get('peer/status');
+        return $this->get('peer/status');
     }
 }

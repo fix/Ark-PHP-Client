@@ -33,14 +33,14 @@ class Client
      * Create a new Ark client instance.
      *
      * @param string $ip
-     * @param int $port
+     * @param int    $port
      * @param string $nethash
      * @param string $version
      */
     public function __construct(string $ip, int $port, string $nethash, string $version)
     {
-        $this->ip = $ip;
-        $this->port = $port;
+        $this->ip      = $ip;
+        $this->port    = $port;
         $this->nethash = $nethash;
         $this->version = $version;
     }
