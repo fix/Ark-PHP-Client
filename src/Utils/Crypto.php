@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace BrianFaust\Ark\Utils;
 
-use StephenHill\Base58;
-
 class Crypto
 {
     /**
@@ -33,13 +31,8 @@ class Crypto
         // Seed
         $seed = pack('C*', $version).$ripemd160;
 
-        // Digest
-        $digest = hash('sha256', $seed, true);
-        $digest = hash('sha256', $digest, true);
-        $digest = substr($digest, 0, 4);
-
         // Encode
-        return (new Base58())->encode($seed.$digest);
+        return Base58::encodeCheck($seed);
     }
 
     /**
@@ -58,12 +51,7 @@ class Crypto
         // Seed
         $seed = pack('C*', $wif).$secret.pack('C*', 0x01);
 
-        // Digest
-        $digest = hash('sha256', $seed, true);
-        $digest = hash('sha256', $digest, true);
-        $digest = substr($digest, 0, 4);
-
         // Encode
-        return (new StephenHill\Base58())->encode($seed.$digest);
+        return Base58::encodeCheck($seed);
     }
 }
