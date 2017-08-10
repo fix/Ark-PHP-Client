@@ -10,7 +10,8 @@
     }],
     "require": {
         "php": "^7.1",
-        "faustbrian/http": "^1.0@dev"
+        "faustbrian/http": "^1.0@dev",
+        "stephenhill/base58": "^1.1"
     },
     "require-dev": {
         "coderabbi/phpumoji": "^0.7.0@beta",
