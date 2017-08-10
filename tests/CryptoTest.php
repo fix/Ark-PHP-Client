@@ -28,7 +28,7 @@ class CryptoTest extends TestCase
         $address = 'Aan1H7m2T6yBVGjRBAa8HYW8xdfoPmrNwD';
 
         // Act...
-        $result = (new Crypto())->getAddress($publicKey);
+        $result = (new Crypto())->address($publicKey);
 
         // Assert...
         $this->assertSame($result, $address);
@@ -42,7 +42,7 @@ class CryptoTest extends TestCase
         $wif = env('ARK_TESTING_WIF');
 
         // Act...
-        $result = (new Crypto())->getWif($secret);
+        $result = (new Crypto())->wif($secret);
 
         // Assert...
         $this->assertSame($result, $wif);
