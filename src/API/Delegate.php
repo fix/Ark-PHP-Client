@@ -87,13 +87,40 @@ class Delegate extends AbstractAPI
 
     /**
      * @param string $secret
-     * @param array  $parameters
+     * @param string $username
+     * @param string $secondSecret
      *
      * @return \Illuminate\Support\Collection
      */
-    public function create(string $secret, array $parameters = []): Collection
+    public function create(string $secret, string $username, ?string $secondSecret = null): Collection
     {
-        return $this->put('api/delegates', compact('secret') + $parameters);
+        $transaction = $this
+            ->nucleid
+            ->require('arkjs')
+            ->execute('delegate.createDelegate')
+            ->arguments(compact('secret', 'username', 'secondSecret'))
+            ->send();
+
+        return $this->post('peer/transactions', ['transactions' => [$transaction]]);
+    }
+
+    /**
+     * @param string $secret
+     * @param string $delegates
+     * @param string $secondSecret
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function vote(string $secret, array $delegates, ?string $secondSecret = null): Collection
+    {
+        $transaction = $this
+            ->nucleid
+            ->require('arkjs')
+            ->execute('vote.createVote')
+            ->arguments(compact('secret', 'delegates', 'secondSecret'))
+            ->send();
+
+        return $this->post('peer/transactions', ['transactions' => [$transaction]]);
     }
 
     /**

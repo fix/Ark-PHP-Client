@@ -46,17 +46,24 @@ class MultiSignature extends AbstractAPI
     /**
      * Create a new multi signature.
      *
-     * @param int    $min
-     * @param int    $lifetime
-     * @param string $keysgroup
      * @param string $secret
-     * @param array  $parameters
+     * @param string $secondSecret
+     * @param string $keysgroup
+     * @param int $lifetime
+     * @param int $min
      *
      * @return \Illuminate\Support\Collection
      */
-    public function create(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []): Collection
+    public function create(string $secret, string $secondSecret, string $keysgroup, int $lifetime, int $min): Collection
     {
-        return $this->put('api/multisignatures', compact('min', 'lifetime', 'keysgroup', 'secret') + $parameters);
+        $transaction = $this
+            ->nucleid
+            ->require('arkjs')
+            ->execute('multisignature.createMultisignature')
+            ->arguments(compact('secret', 'secondSecret'))
+            ->send();
+
+        return $this->post('peer/transactions', ['transactions' => [$transaction]]);
     }
 
     /**

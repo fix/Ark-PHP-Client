@@ -32,12 +32,18 @@ class Signature extends AbstractAPI
      *
      * @param string $secret
      * @param string $secondSecret
-     * @param array  $parameters
      *
      * @return \Illuminate\Support\Collection
      */
-    public function create(string $secret, string $secondSecret, array $parameters = []): Collection
+    public function create(string $secret, string $secondSecret): Collection
     {
-        return $this->put('api/signatures', compact('secret', 'secondSecret') + $parameters);
+        $transaction = $this
+            ->nucleid
+            ->require('arkjs')
+            ->execute('signature.createSignature')
+            ->arguments(compact('secret', 'secondSecret'))
+            ->send();
+
+        return $this->post('peer/transactions', ['transactions' => [$transaction]]);
     }
 }

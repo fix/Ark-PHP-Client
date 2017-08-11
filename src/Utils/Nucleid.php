@@ -38,7 +38,7 @@ class Nucleid
     /**
      * @param string $path
      */
-    public function __construct(string $path = '/usr/bin')
+    public function __construct(string $path)
     {
         $this->path = $path;
     }
@@ -74,7 +74,7 @@ class Nucleid
      */
     public function arguments(array $value): Nucleid
     {
-        $this->arguments = $value;
+        $this->arguments = array_filter($value);
 
         return $this;
     }
@@ -84,13 +84,13 @@ class Nucleid
      *
      * @return array
      */
-    public function send(): array
+    public function send()
     {
         putenv("PATH={$this->path}");
 
         $output = shell_exec("nucleid -r {$this->require} -e {$this->execute} {$this->buildArguments()} --ojson 2>&1 &");
 
-        return json_decode($output, true);
+        return json_decode($output);
     }
 
     /**

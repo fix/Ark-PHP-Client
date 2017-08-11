@@ -17,22 +17,30 @@ use BrianFaust\Http\HttpResponse;
 use Illuminate\Support\Collection;
 use BrianFaust\Http\PendingHttpRequest;
 use BrianFaust\Ark\Exceptions\InvalidResponseException;
+use BrianFaust\Ark\Utils\Nucleid;
 
 abstract class AbstractAPI
 {
     /**
      * @var \BrianFaust\Http\PendingHttpRequest
      */
-    private $client;
+    protected $client;
+
+    /**
+     * @var \BrianFaust\Ark\Utils\Nucleid
+     */
+    protected $nucleid;
 
     /**
      * Create a new API class instance.
      *
      * @param \BrianFaust\Http\PendingHttpRequest $client
+     * @param \BrianFaust\Ark\Utils\Nucleid $client
      */
-    public function __construct(PendingHttpRequest $client)
+    public function __construct(PendingHttpRequest $client, Nucleid $nucleid)
     {
         $this->client = $client;
+        $this->nucleid = $nucleid;
     }
 
     /**
@@ -78,7 +86,7 @@ abstract class AbstractAPI
     /**
      * Handle the response format ark-node uses.
      */
-    private function handle(HttpResponse $response): Collection
+    protected function handle(HttpResponse $response): Collection
     {
         $body = $response->json();
 

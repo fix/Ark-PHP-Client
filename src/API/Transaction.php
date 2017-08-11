@@ -68,15 +68,26 @@ class Transaction extends AbstractAPI
     /**
      * Create a new transaction.
      *
-     * @param string $secret
-     * @param int    $amount
      * @param string $recipientId
-     * @param array  $parameters
+     * @param int $amount
+     * @param string $vendorField
+     * @param string $secret
+     * @param null|string $secondSecret
      *
      * @return \Illuminate\Support\Collection
      */
-    public function create(string $secret, int $amount, string $recipientId, array $parameters = []): Collection
+    public function create(string $recipientId, int $amount, string $vendorField, string $secret, ?string $secondSecret = null): Collection
     {
-        return $this->put('api/transactions', compact('secret', 'amount', 'recipientId') + $parameters);
+        $transaction = $this
+            ->nucleid
+            ->require('arkjs')
+            ->execute('transaction.createTransaction')
+            ->arguments(compact('recipientId', 'amount', 'vendorField', 'secret', 'secondSecret'))
+            ->send();
+
+        // For some reason the amount comes back as a string so we will cast it to int
+        $transaction->amount = intval($transaction->amount);
+
+        return $this->post('peer/transactions', ['transactions' => [$transaction]]);
     }
 }
