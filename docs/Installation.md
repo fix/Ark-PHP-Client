@@ -1,27 +1,13 @@
 # Installation
 
-## Initialize Client
+## Prerequisites
 
-```php
-$client = new BrianFaust\Ark\Client('your-node-ip', 4001, 'your-nethash', 'your-version');
+Before starting to use [ARK-PHP-Client](https://github.com/faustbrian/Ark-PHP-Client) make sure you have [NUCLeId](https://github.com/ArkEcosystem/nucleid) and [ARK JS](https://github.com/ArkEcosystem/ark-js) installed globally with [npm](https://www.npmjs.com/).
+
+## Composer
+
+Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
+
+``` bash
+$ composer require faustbrian/ark-php-client
 ```
-
-## Sending Requests
-
-Sending requests is as easy as choosing the API you want to use and what method. After sending a request make sure you check if the response returned a status code of 200 with by using the `isSuccess` or `isOk` methods.
-
-```php
-$response = $client->api('Peer')->version();
-
-if ($response->isSuccess()) {
-    $body = $response->json();
-
-    if ($response['success']) {
-        dd('Everything OK!');
-    }
-} else {
-    dd('Something went wrong...');
-}
-```
-
-ark-node will always a return 200 status code if validation passed but the response can still contain an error so you should always make sure to double check by confirming that the `success` field of the response body is `true`. If the `success` field equals `false` you should make use of the `error` field that should be available.
