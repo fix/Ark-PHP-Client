@@ -15,7 +15,7 @@ $client->api('MultiSignature')->sign(string $transactionId, string $secret, arra
 ## Create a new multi signature.
 
 ```php
-$client->api('MultiSignature')->create(int $min, int $lifetime, string $keysgroup, string $secret, array $parameters = []);
+$client->api('MultiSignature')->create(string $secret, string $secondSecret, string $keysgroup, int $lifetime, int $min);
 ```
 
 ## Get a list of accounts.

@@ -45,7 +45,14 @@ $client->api('Delegate')->forgedByAccount(string $generatorPublicKey);
 ## create
 
 ```php
-$client->api('Delegate')->create(string $secret, array $parameters = []);
+$client->api('Delegate')->create(string $secret, string $username, ?string $secondSecret = null);
+```
+
+
+## vote
+
+```php
+$client->api('Delegate')->vote(string $secret, array $delegates, ?string $secondSecret = null);
 ```
 
 ## nextForgers

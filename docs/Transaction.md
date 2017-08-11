@@ -27,5 +27,5 @@ $client->api('Transaction')->unconfirmedTransactions(array $parameters = []);
 ## Create a new transaction.
 
 ```php
-$client->api('Transaction')->create(string $secret, int $amount, string $recipientId, array $parameters = []);
+$client->api('Transaction')->create(string $recipientId, int $amount, string $vendorField, string $secret, ?string $secondSecret = null);
 ```
