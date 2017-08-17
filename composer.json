@@ -10,7 +10,7 @@
     }],
     "require": {
         "php": "^7.1",
-        "faustbrian/http": "^1.0@dev",
+        "faustbrian/http": "^1.0",
         "stephenhill/base58": "^1.1"
     },
     "require-dev": {
@@ -37,7 +37,5 @@
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
