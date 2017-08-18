@@ -59,7 +59,7 @@ class DelegateTest extends TestCase
     {
         // Act...
         $response = $this->getClient()->api('Delegate')->delegate([
-            'publicKey' => '03abd20e654fa87af4efcdbbb4a0dd82a01cf3e88e72269809b698d785b98b09b2'
+            'publicKey' => '03abd20e654fa87af4efcdbbb4a0dd82a01cf3e88e72269809b698d785b98b09b2',
         ]);
 
         // Assert...
