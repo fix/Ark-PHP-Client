@@ -3,25 +3,19 @@
 ## Initialize Client
 
 ```php
-$client = new BrianFaust\Ark\Client('your-node-ip', 4001, 'your-nethash', 'your-version');
+$client = new BrianFaust\Ark\Client('your-node-ip', 4001, 'your-nethash', 'your-version', 'nucleid-arkjs-path');
 ```
 
 ## Sending Requests
 
-Sending requests is as easy as choosing the API you want to use and what method. After sending a request make sure you check if the response returned a status code of 200 with by using the `isSuccess` or `isOk` methods.
+Sending requests is as easy as choosing the API you want to use and what method. All requests will throw an `BrianFaust\Ark\Exceptions\InvalidResponseException` if the `success` field from the `ark-node` response equals `false`. This double-checking had to be done internal because `ark-node` will always return a status-code `200` on requests that go through but fail validation for example, so relying on checking for a 422 status-code wouldn't work in that case.
 
 ```php
-$response = $client->api('Peer')->version();
+try {
+    $response = $client->api('Peer')->version();
 
-if ($response->isSuccess()) {
-    $body = $response->json();
-
-    if ($response['success']) {
-        dd('Everything OK!');
-    }
-} else {
-    dd('Something went wrong...');
+    dd('Everything OK!', $response);
+} catch(BrianFaust\Ark\Exceptions\InvalidResponseException $e) {
+    dd($e->getMessage());
 }
 ```
-
-ark-node will always a return 200 status code if validation passed but the response can still contain an error so you should always make sure to double check by confirming that the `success` field of the response body is `true`. If the `success` field equals `false` you should make use of the `error` field that should be available.
